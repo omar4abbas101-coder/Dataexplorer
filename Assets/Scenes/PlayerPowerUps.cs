@@ -21,8 +21,15 @@ public class PlayerPowerUps : MonoBehaviour
 
     private Color baseShipColor;
 
+    private bool rapidFireActive;
     private bool magnetActive;
+
+    private float rapidFireTimeRemaining;
+    private float magnetTimeRemaining;
+
     private float magnetRadius;
+    private float magnetPullSpeed;
+    private LayerMask magnetPickupLayer;
 
     private Coroutine rapidRoutine;
     private Coroutine magnetRoutine;
@@ -34,27 +41,36 @@ public class PlayerPowerUps : MonoBehaviour
         if (shooter == null) shooter = GetComponentInChildren<PlayerShooter>();
         if (shipRenderer == null) shipRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        if (shipRenderer != null) baseShipColor = shipRenderer.color;
+        if (shipRenderer != null)
+            baseShipColor = shipRenderer.color;
 
         magnetHits = new Collider2D[Mathf.Max(8, magnetMaxHits)];
     }
 
+    // =========================
+    // RAPID FIRE
+    // =========================
     public void ActivateRapidFire(float duration, float cooldownMultiplier)
     {
         if (shooter == null) return;
 
-        if (rapidRoutine != null) StopCoroutine(rapidRoutine);
-        rapidRoutine = StartCoroutine(RapidFireRoutine(duration, cooldownMultiplier));
+        rapidFireTimeRemaining += duration;
+
+        if (rapidFireActive) return;
+
+        rapidRoutine = StartCoroutine(RapidFireRoutine(cooldownMultiplier));
     }
 
-    private IEnumerator RapidFireRoutine(float duration, float cooldownMultiplier)
+    private IEnumerator RapidFireRoutine(float cooldownMultiplier)
     {
-        if (shipRenderer != null) baseShipColor = shipRenderer.color;
+        rapidFireActive = true;
+
+        if (shipRenderer != null)
+            baseShipColor = shipRenderer.color;
 
         shooter.fireCooldown = shooter.baseFireCooldown * cooldownMultiplier;
 
-        float t = 0f;
-        while (t < duration)
+        while (rapidFireTimeRemaining > 0f)
         {
             if (shipRenderer != null)
             {
@@ -62,34 +78,51 @@ public class PlayerPowerUps : MonoBehaviour
                 shipRenderer.color = Color.Lerp(baseShipColor, rapidFireColor, pulse);
             }
 
-            t += Time.deltaTime;
+            rapidFireTimeRemaining -= Time.deltaTime;
             yield return null;
         }
 
+        rapidFireTimeRemaining = 0f;
+        rapidFireActive = false;
+
         shooter.fireCooldown = shooter.baseFireCooldown;
 
-        if (shipRenderer != null) shipRenderer.color = baseShipColor;
+        if (shipRenderer != null)
+            shipRenderer.color = baseShipColor;
 
         rapidRoutine = null;
     }
 
+    // =========================
+    // MAGNET
+    // =========================
     public void ActivateMagnet(float duration, float radius, float pullSpeed, LayerMask pickupLayer)
     {
-        if (magnetRoutine != null) StopCoroutine(magnetRoutine);
-        magnetRoutine = StartCoroutine(MagnetRoutine(duration, radius, pullSpeed, pickupLayer));
+        magnetTimeRemaining += duration;
+        magnetRadius = radius;
+        magnetPullSpeed = pullSpeed;
+        magnetPickupLayer = pickupLayer;
+
+        if (magnetActive) return;
+
+        magnetRoutine = StartCoroutine(MagnetRoutine());
     }
 
-    private IEnumerator MagnetRoutine(float duration, float radius, float pullSpeed, LayerMask pickupLayer)
+    private IEnumerator MagnetRoutine()
     {
         magnetActive = true;
-        magnetRadius = radius;
 
-        float elapsed = 0f;
         WaitForSeconds wait = new WaitForSeconds(magnetUpdateInterval);
 
-        while (elapsed < duration)
+        while (magnetTimeRemaining > 0f)
         {
-            int count = Physics2D.OverlapCircleNonAlloc(transform.position, magnetRadius, magnetHits, pickupLayer);
+            int count = Physics2D.OverlapCircleNonAlloc(
+                transform.position,
+                magnetRadius,
+                magnetHits,
+                magnetPickupLayer
+            );
+
             Vector2 playerPos2D = transform.position;
 
             for (int i = 0; i < count; i++)
@@ -101,7 +134,12 @@ public class PlayerPowerUps : MonoBehaviour
 
                 if (rb != null)
                 {
-                    Vector2 newPos = Vector2.MoveTowards(rb.position, playerPos2D, pullSpeed * magnetUpdateInterval);
+                    Vector2 newPos = Vector2.MoveTowards(
+                        rb.position,
+                        playerPos2D,
+                        magnetPullSpeed * magnetUpdateInterval
+                    );
+
                     rb.MovePosition(newPos);
                 }
                 else
@@ -109,24 +147,29 @@ public class PlayerPowerUps : MonoBehaviour
                     c.transform.position = Vector3.MoveTowards(
                         c.transform.position,
                         transform.position,
-                        pullSpeed * magnetUpdateInterval
+                        magnetPullSpeed * magnetUpdateInterval
                     );
                 }
 
                 magnetHits[i] = null;
             }
 
-            elapsed += magnetUpdateInterval;
+            magnetTimeRemaining -= magnetUpdateInterval;
             yield return wait;
         }
+
+        magnetTimeRemaining = 0f;
+        magnetActive = false;
 
         for (int i = 0; i < magnetHits.Length; i++)
             magnetHits[i] = null;
 
-        magnetActive = false;
         magnetRoutine = null;
     }
 
+    // =========================
+    // GIZMOS
+    // =========================
     void OnDrawGizmos()
     {
         if (!showMagnetGizmos) return;

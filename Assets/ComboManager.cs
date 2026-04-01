@@ -15,15 +15,20 @@ public class ComboManager : MonoBehaviour
     [SerializeField] int hitsPerMultiplierStep = 3;
     [SerializeField] int maxMultiplier = 5;
 
-    [Header("Magnet Reward (spawns at combo x5)")]
+    [Header("Magnet Reward")]
     [SerializeField] GameObject magnetPickupPrefab;
     [SerializeField] Vector2 spawnMin = new Vector2(-8f, -4f);
     [SerializeField] Vector2 spawnMax = new Vector2(8f, 4f);
-    [SerializeField] int rewardMultiplierThreshold = 5;
+    [SerializeField] int rewardMultiplierThreshold = 4;
+
+    [Header("PowerUp Limit")]
+    [SerializeField] int maxPowerUpsOnScreen = 2;
+    [SerializeField] float powerUpSpawnCooldown = 5f;
 
     int comboCount = 0;
     float timer = 0f;
     bool magnetSpawnedThisChain = false;
+    float nextAllowedPowerUpSpawnTime = 0f;
 
     void Awake()
     {
@@ -54,10 +59,12 @@ public class ComboManager : MonoBehaviour
         timer = comboResetTime;
 
         int mult = GetMultiplier();
+
         if (!magnetSpawnedThisChain && mult >= rewardMultiplierThreshold)
         {
-            SpawnMagnetPickupRandom();
-            magnetSpawnedThisChain = true;
+            bool spawned = SpawnMagnetPickupRandom();
+            if (spawned)
+                magnetSpawnedThisChain = true;
         }
 
         UpdateUI();
@@ -95,9 +102,16 @@ public class ComboManager : MonoBehaviour
         comboText.text = $"COMBO x{GetMultiplier()} ({comboCount})";
     }
 
-    void SpawnMagnetPickupRandom()
+    bool SpawnMagnetPickupRandom()
     {
-        if (magnetPickupPrefab == null) return;
+        if (magnetPickupPrefab == null) return false;
+
+        if (Time.time < nextAllowedPowerUpSpawnTime)
+            return false;
+
+        PowerUpPickup[] existingPowerUps = FindObjectsOfType<PowerUpPickup>();
+        if (existingPowerUps.Length >= maxPowerUpsOnScreen)
+            return false;
 
         Vector2 pos = new Vector2(
             Random.Range(spawnMin.x, spawnMax.x),
@@ -105,5 +119,8 @@ public class ComboManager : MonoBehaviour
         );
 
         Instantiate(magnetPickupPrefab, pos, Quaternion.identity);
+
+        nextAllowedPowerUpSpawnTime = Time.time + powerUpSpawnCooldown;
+        return true;
     }
 }

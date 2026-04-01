@@ -14,15 +14,22 @@ public class PowerUpPickup : MonoBehaviour
     [Header("Magnet")]
     public float magnetRadius = 6f;
     public float magnetPullSpeed = 30f;
-    public LayerMask pickupLayer; // set this to the layer your collectibles are on
+    public LayerMask pickupLayer;
 
     private bool collected;
+    private Collider2D col;
+    private SpriteRenderer sr;
+
+    void Awake()
+    {
+        col = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (collected) return;
 
-        // Works even if the collider is on a child object
         var power = other.GetComponentInParent<PlayerPowerUps>()
                  ?? other.GetComponentInChildren<PlayerPowerUps>();
 
@@ -30,12 +37,14 @@ public class PowerUpPickup : MonoBehaviour
 
         collected = true;
 
+        if (col != null) col.enabled = false;
+        if (sr != null) sr.enabled = false;
+
         if (type == PowerUpType.RapidFire)
             power.ActivateRapidFire(duration, rapidFireCooldownMultiplier);
         else
             power.ActivateMagnet(duration, magnetRadius, magnetPullSpeed, pickupLayer);
 
-        // Destroy whole prefab instance (parent/child safe)
         Destroy(transform.root.gameObject);
     }
 }

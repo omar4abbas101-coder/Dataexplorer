@@ -631,10 +631,12 @@ MonoBehaviour:
   comboResetTime: 2
   hitsPerMultiplierStep: 3
   maxMultiplier: 5
-  magnetPickupPrefab: {fileID: 0}
+  magnetPickupPrefab: {fileID: 1366182251854831077, guid: 9685887636f0609409461acd16eae54f, type: 3}
   spawnMin: {x: -8, y: -4}
   spawnMax: {x: 8, y: 4}
-  rewardMultiplierThreshold: 5
+  rewardMultiplierThreshold: 4
+  maxPowerUpsOnScreen: 2
+  powerUpSpawnCooldown: 50
 --- !u!1 &693150584
 GameObject:
   m_ObjectHideFlags: 0
