@@ -23,21 +23,23 @@ public class Projectile : MonoBehaviour
         Hazard hazard = other.GetComponentInParent<Hazard>();
         if (hazard == null) return;
 
-        // 1️⃣ base score from hazard
+        if (!hazard.CompareTag("Hazard"))
+            return;
+
         int score = hazard.GetScoreValue();
 
-        // 2️⃣ register combo hit
         if (ComboManager.Instance != null)
         {
-           ComboManager.Instance.RegisterHit();
+            ComboManager.Instance.RegisterHit();
             score = ComboManager.Instance.ApplyMultiplier(score);
         }
 
-        // 3️⃣ add score
         if (GameManager.Instance != null)
             GameManager.Instance.AddScore(score);
-if (CameraShake.Instance != null)
-    CameraShake.Instance.Shake();
+
+        if (CameraShake.Instance != null)
+            CameraShake.Instance.Shake();
+
         Destroy(hazard.gameObject);
         Destroy(gameObject);
     }

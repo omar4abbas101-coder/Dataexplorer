@@ -3,16 +3,23 @@ using UnityEngine;
 public class SpawnPickup : MonoBehaviour
 {
     public GameObject pickupPrefab;
-    public float spawnInterval = 2f;
+    public Transform[] spawnPoints;
+    public int maxPickups = 20;
 
     float timer;
 
     void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.IsGameOver) return;
+        if (GameManager.Instance != null && GameManager.Instance.IsGameOver)
+            return;
+
+        float interval = 3f;
+        if (DifficultySettings.Instance != null)
+            interval = DifficultySettings.Instance.GetTuning().pickupSpawnInterval;
 
         timer += Time.deltaTime;
-        if (timer >= spawnInterval)
+
+        if (timer >= interval)
         {
             timer = 0f;
             Spawn();
@@ -21,16 +28,13 @@ public class SpawnPickup : MonoBehaviour
 
     void Spawn()
     {
-        if (Camera.main == null) return;
+        if (pickupPrefab == null) return;
+        if (spawnPoints == null || spawnPoints.Length == 0) return;
 
-        float vert = Camera.main.orthographicSize;
-        float horz = vert * Camera.main.aspect;
+        GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
+        if (pickups.Length >= maxPickups) return;
 
-        Vector2 spawnPos = new Vector2(
-            Random.Range(-horz + 0.5f, horz - 0.5f),
-            Random.Range(-vert + 0.5f, vert - 0.5f)
-        );
-
-        Instantiate(pickupPrefab, spawnPos, Quaternion.identity);
+        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(pickupPrefab, sp.position, sp.rotation);
     }
 }

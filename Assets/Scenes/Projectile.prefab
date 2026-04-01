@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6805887357921242911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4446281874620709304}
   - component: {fileID: 5120511441363791518}
   - component: {fileID: 2137035808216301112}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,4 +379,8 @@ MonoBehaviour:
   shooter: {fileID: 0}
   shipRenderer: {fileID: 0}
   rapidFireColor: {r: 0, g: 0.07107735, b: 1, a: 1}
-  glowIntensity: 2
+  pulseSpeed: 8
+  magnetMaxHits: 25
+  magnetUpdateInterval: 0.05
+  showMagnetGizmos: 1
+  magnetPreviewRadius: 3

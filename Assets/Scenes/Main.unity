@@ -779,7 +779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPrefab: {fileID: 266357306420487622, guid: 64696ebc6c8fb524bbcb3cdbfbd29e5f, type: 3}
-  spawnInterval: 2
+  spawnPoints: []
+  maxPickups: 20
 --- !u!4 &711210058
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,7 +1732,8 @@ MonoBehaviour:
   shipRenderer: {fileID: 1221118643}
   rapidFireColor: {r: 1, g: 0, b: 0, a: 1}
   pulseSpeed: 8
-  magnetMaxHits: 64
+  magnetMaxHits: 25
+  magnetUpdateInterval: 0.05
   showMagnetGizmos: 1
   magnetPreviewRadius: 3
 --- !u!114 &1221118645

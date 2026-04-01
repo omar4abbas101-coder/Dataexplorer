@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3dee6c3cfef8347975ca1501b4e910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDifficulty: 1
+  currentDifficulty: 2
   easy:
     hazardSpawnInterval: 2
     pickupSpawnInterval: 2.5

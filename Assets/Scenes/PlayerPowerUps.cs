@@ -12,7 +12,8 @@ public class PlayerPowerUps : MonoBehaviour
     [SerializeField] private float pulseSpeed = 8f;
 
     [Header("Magnet")]
-    [SerializeField] private int magnetMaxHits = 64;
+    [SerializeField] private int magnetMaxHits = 25;
+    [SerializeField] private float magnetUpdateInterval = 0.05f;
 
     [Header("Gizmos")]
     [SerializeField] private bool showMagnetGizmos = true;
@@ -38,9 +39,6 @@ public class PlayerPowerUps : MonoBehaviour
         magnetHits = new Collider2D[Mathf.Max(8, magnetMaxHits)];
     }
 
-    // =========================
-    // RAPID FIRE
-    // =========================
     public void ActivateRapidFire(float duration, float cooldownMultiplier)
     {
         if (shooter == null) return;
@@ -75,9 +73,6 @@ public class PlayerPowerUps : MonoBehaviour
         rapidRoutine = null;
     }
 
-    // =========================
-    // MAGNET
-    // =========================
     public void ActivateMagnet(float duration, float radius, float pullSpeed, LayerMask pickupLayer)
     {
         if (magnetRoutine != null) StopCoroutine(magnetRoutine);
@@ -89,46 +84,49 @@ public class PlayerPowerUps : MonoBehaviour
         magnetActive = true;
         magnetRadius = radius;
 
-        float t = 0f;
-        while (t < duration)
+        float elapsed = 0f;
+        WaitForSeconds wait = new WaitForSeconds(magnetUpdateInterval);
+
+        while (elapsed < duration)
         {
             int count = Physics2D.OverlapCircleNonAlloc(transform.position, magnetRadius, magnetHits, pickupLayer);
-
-            // Debug check (optional): uncomment to verify detection
-            // if (Time.frameCount % 60 == 0) Debug.Log("Magnet hits: " + count);
-
             Vector2 playerPos2D = transform.position;
 
             for (int i = 0; i < count; i++)
             {
-                var c = magnetHits[i];
-                if (!c) continue;
-
-                // IMPORTANT: each collectible MUST have a Collider2D or it can’t be detected here.
+                Collider2D c = magnetHits[i];
+                if (c == null) continue;
 
                 Rigidbody2D rb = c.attachedRigidbody;
+
                 if (rb != null)
                 {
-                    Vector2 newPos = Vector2.MoveTowards(rb.position, playerPos2D, pullSpeed * Time.deltaTime);
+                    Vector2 newPos = Vector2.MoveTowards(rb.position, playerPos2D, pullSpeed * magnetUpdateInterval);
                     rb.MovePosition(newPos);
                 }
                 else
                 {
-                    c.transform.position = Vector3.MoveTowards(c.transform.position, transform.position, pullSpeed * Time.deltaTime);
+                    c.transform.position = Vector3.MoveTowards(
+                        c.transform.position,
+                        transform.position,
+                        pullSpeed * magnetUpdateInterval
+                    );
                 }
+
+                magnetHits[i] = null;
             }
 
-            t += Time.deltaTime;
-            yield return null;
+            elapsed += magnetUpdateInterval;
+            yield return wait;
         }
+
+        for (int i = 0; i < magnetHits.Length; i++)
+            magnetHits[i] = null;
 
         magnetActive = false;
         magnetRoutine = null;
     }
 
-    // =========================
-    // GIZMOS
-    // =========================
     void OnDrawGizmos()
     {
         if (!showMagnetGizmos) return;

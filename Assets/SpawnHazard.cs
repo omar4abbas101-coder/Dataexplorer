@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class SpawnHazard : MonoBehaviour
 {
-    public GameObject hazardPrefab;      // <-- GameObject fixes "Type mismatch"
+    public GameObject hazardPrefab;
     public Transform[] spawnPoints;
+    public int maxHazards = 50;
 
     float timer;
 
@@ -29,6 +30,9 @@ public class SpawnHazard : MonoBehaviour
     {
         if (hazardPrefab == null) return;
         if (spawnPoints == null || spawnPoints.Length == 0) return;
+
+        GameObject[] hazards = GameObject.FindGameObjectsWithTag("Hazard");
+        if (hazards.Length >= maxHazards) return;
 
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(hazardPrefab, sp.position, sp.rotation);
