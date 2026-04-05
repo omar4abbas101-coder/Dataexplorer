@@ -15,20 +15,19 @@ public class ComboManager : MonoBehaviour
     [SerializeField] int hitsPerMultiplierStep = 3;
     [SerializeField] int maxMultiplier = 5;
 
-    [Header("Magnet Reward")]
+    [Header("Reward PowerUps")]
     [SerializeField] GameObject magnetPickupPrefab;
+    [SerializeField] GameObject rapidFirePickupPrefab;
     [SerializeField] Vector2 spawnMin = new Vector2(-8f, -4f);
     [SerializeField] Vector2 spawnMax = new Vector2(8f, 4f);
-    [SerializeField] int rewardMultiplierThreshold = 4;
 
-    [Header("PowerUp Limit")]
+    [Header("Reward Spawn Control")]
+    [SerializeField] int firstRewardComboHits = 9;
+    [SerializeField] int rewardEveryXHits = 9;
     [SerializeField] int maxPowerUpsOnScreen = 2;
-    [SerializeField] float powerUpSpawnCooldown = 5f;
 
     int comboCount = 0;
     float timer = 0f;
-    bool magnetSpawnedThisChain = false;
-    float nextAllowedPowerUpSpawnTime = 0f;
 
     void Awake()
     {
@@ -58,13 +57,14 @@ public class ComboManager : MonoBehaviour
         comboCount++;
         timer = comboResetTime;
 
-        int mult = GetMultiplier();
-
-        if (!magnetSpawnedThisChain && mult >= rewardMultiplierThreshold)
+        if (comboCount >= firstRewardComboHits)
         {
-            bool spawned = SpawnMagnetPickupRandom();
-            if (spawned)
-                magnetSpawnedThisChain = true;
+            int hitsAfterFirst = comboCount - firstRewardComboHits;
+
+            if (hitsAfterFirst % rewardEveryXHits == 0)
+            {
+                SpawnRewardPowerUpRandom();
+            }
         }
 
         UpdateUI();
@@ -85,7 +85,6 @@ public class ComboManager : MonoBehaviour
     {
         comboCount = 0;
         timer = 0f;
-        magnetSpawnedThisChain = false;
         UpdateUI();
     }
 
@@ -102,25 +101,31 @@ public class ComboManager : MonoBehaviour
         comboText.text = $"COMBO x{GetMultiplier()} ({comboCount})";
     }
 
-    bool SpawnMagnetPickupRandom()
+    void SpawnRewardPowerUpRandom()
     {
-        if (magnetPickupPrefab == null) return false;
-
-        if (Time.time < nextAllowedPowerUpSpawnTime)
-            return false;
-
         PowerUpPickup[] existingPowerUps = FindObjectsOfType<PowerUpPickup>();
-        if (existingPowerUps.Length >= maxPowerUpsOnScreen)
-            return false;
+        if (existingPowerUps.Length >= maxPowerUpsOnScreen) return;
 
         Vector2 pos = new Vector2(
             Random.Range(spawnMin.x, spawnMax.x),
             Random.Range(spawnMin.y, spawnMax.y)
         );
 
-        Instantiate(magnetPickupPrefab, pos, Quaternion.identity);
+        GameObject prefabToSpawn = null;
 
-        nextAllowedPowerUpSpawnTime = Time.time + powerUpSpawnCooldown;
-        return true;
+        bool spawnMagnet = Random.value < 0.5f;
+
+        if (spawnMagnet)
+        {
+            prefabToSpawn = magnetPickupPrefab != null ? magnetPickupPrefab : rapidFirePickupPrefab;
+        }
+        else
+        {
+            prefabToSpawn = rapidFirePickupPrefab != null ? rapidFirePickupPrefab : magnetPickupPrefab;
+        }
+
+        if (prefabToSpawn == null) return;
+
+        Instantiate(prefabToSpawn, pos, Quaternion.identity);
     }
 }

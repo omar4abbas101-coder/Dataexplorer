@@ -632,11 +632,12 @@ MonoBehaviour:
   hitsPerMultiplierStep: 3
   maxMultiplier: 5
   magnetPickupPrefab: {fileID: 1366182251854831077, guid: 9685887636f0609409461acd16eae54f, type: 3}
+  rapidFirePickupPrefab: {fileID: 6014003161680700031, guid: 3e9aa827ea27a4e419d44067532096e6, type: 3}
   spawnMin: {x: -8, y: -4}
   spawnMax: {x: 8, y: 4}
-  rewardMultiplierThreshold: 4
+  firstRewardComboHits: 9
+  rewardEveryXHits: 9
   maxPowerUpsOnScreen: 2
-  powerUpSpawnCooldown: 50
 --- !u!1 &693150584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2009,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667305904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd656407ca1f34e49a0b763dada553db, type: 3}
   m_Name: 
@@ -2368,7 +2369,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093978814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c2d0ebf245557a49ab5ab4a12460e14, type: 3}
   m_Name: 
