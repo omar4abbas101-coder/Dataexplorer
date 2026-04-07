@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     bool isInvincible;
     Coroutine invRoutine;
 
-    // Other scripts expect these:
     public int Score => score;
     public int HP => hp;
     public bool IsGameOver => isGameOver;
@@ -34,6 +33,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
     }
 
@@ -74,9 +74,16 @@ public class GameManager : MonoBehaviour
         SetInvincible(invincibleSecondsAfterHit);
     }
 
+    public void TakeDamage(int damage)
+    {
+        PlayerHit(damage);
+    }
+
     public void SetInvincible(float seconds)
     {
-        if (invRoutine != null) StopCoroutine(invRoutine);
+        if (invRoutine != null)
+            StopCoroutine(invRoutine);
+
         invRoutine = StartCoroutine(InvRoutine(seconds));
     }
 
@@ -91,8 +98,8 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         if (isGameOver) return;
-        isGameOver = true;
 
+        isGameOver = true;
         Time.timeScale = 1f;
         SceneManager.LoadScene(gameOverSceneName);
     }

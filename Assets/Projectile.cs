@@ -18,14 +18,25 @@ public class Projectile : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+   void OnTriggerEnter2D(Collider2D other)
+{
+    // HIT ENEMY
+    Enemy enemy = other.GetComponentInParent<Enemy>();
+    if (enemy != null)
     {
-        Hazard hazard = other.GetComponentInParent<Hazard>();
-        if (hazard == null) return;
+        enemy.TakeDamage(1);
 
-        if (!hazard.CompareTag("Hazard"))
-            return;
+        if (CameraShake.Instance != null)
+            CameraShake.Instance.Shake();
 
+        Destroy(gameObject);
+        return;
+    }
+
+    // HIT METEOR (existing system)
+    Hazard hazard = other.GetComponentInParent<Hazard>();
+    if (hazard != null)
+    {
         int score = hazard.GetScoreValue();
 
         if (ComboManager.Instance != null)
@@ -43,4 +54,5 @@ public class Projectile : MonoBehaviour
         Destroy(hazard.gameObject);
         Destroy(gameObject);
     }
+}
 }
