@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\playercontroller2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\enemyshooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyshooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerController2D.cs",
+              "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PlayerController2D.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController2D.cs",
+              "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PlayerController2D.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController2D.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAgwA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T15:55:46.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnemyShooter.cs",
+              "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\EnemyShooter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyShooter.cs",
+              "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\EnemyShooter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyShooter.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T15:50:42.878Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

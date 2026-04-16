@@ -66,7 +66,9 @@ public class EnemyShooter : MonoBehaviour
     {
         if (bulletPrefab == null || firePoint == null) return;
 
-        Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, -90));
+        // I replaced "Quaternion.identity" with "Quaterniom.Euler(0, 0, -90)" to make bullets be spawned at a correct angle
+        // Use Quaterniom.Euler(x, y, z) when spawning to set rotation 
     }
 
     void OnDrawGizmos()
