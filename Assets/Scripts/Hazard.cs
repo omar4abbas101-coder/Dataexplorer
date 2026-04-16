@@ -2,54 +2,60 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    public float baseSpeed = 4f;
-    public bool useRightAxis = true; // true = move along transform.right, false = transform.up
+    [Header("references")]
+    [SerializeField] SpriteRenderer sprite;
 
-    Rigidbody2D rb;
+    [Header("properties")]
+    [SerializeField] float baseSpeed = 4f;
+    [SerializeField] float rotationRange = 10f;
+    [SerializeField] float lifeTime = 20f;
+    [SerializeField] float rotationSpeed = 1f;
 
-    void Awake()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        Init();
     }
-
-    void Start()
+    private void Init()
     {
-        float speed = baseSpeed;
+        // settings random rotation offset
+        float randomRotationOffset = Random.Range(-rotationRange, rotationRange);
+        transform.Rotate(0, 0, randomRotationOffset);
 
-        if (DifficultySettings.Instance != null)
-            speed *= DifficultySettings.Instance.GetTuning().hazardSpeedMultiplier;
-
-        Vector2 dir = useRightAxis ? (Vector2)transform.right : (Vector2)transform.up;
-        dir = dir.normalized;
-
-        // If you have Rigidbody2D, use velocity (best for collisions)
-        if (rb != null)
-        {
-            rb.gravityScale = 0f;
-            rb.velocity = dir * speed;
-        }
+        // autodestroying the asteroids after lifetime expires
+        Destroy(this.gameObject, lifeTime);
     }
 
     void Update()
     {
-        // Fallback if no Rigidbody2D is present
-        if (rb == null)
-        {
-            float speed = baseSpeed;
-            if (DifficultySettings.Instance != null)
-                speed *= DifficultySettings.Instance.GetTuning().hazardSpeedMultiplier;
-
-            Vector2 dir = useRightAxis ? (Vector2)transform.right : (Vector2)transform.up;
-            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        }
+        Movement();
+        Rotation();
     }
-public int GetScoreValue()
-{
-    if (DifficultySettings.Instance != null)
-        return DifficultySettings.Instance.GetTuning().hazardScoreValue;
 
-    return 10;
-}
+    // rotating the asteroid around its own axis
+    void Rotation()
+    {
+        if (sprite != null) sprite.transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+    }
+
+    // moving the asteroid
+    void Movement()
+    {
+        // I removed all the unnecessary code and simplified the movement (it could be simplified further)
+
+        float speed = baseSpeed;
+        if (DifficultySettings.Instance != null)
+            speed *= DifficultySettings.Instance.GetTuning().hazardSpeedMultiplier;
+
+        transform.Translate(0, speed * Time.deltaTime, 0, Space.Self);
+    }
+
+    public int GetScoreValue()
+    {
+        if (DifficultySettings.Instance != null)
+            return DifficultySettings.Instance.GetTuning().hazardScoreValue;
+
+        return 10;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

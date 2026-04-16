@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController2D : MonoBehaviour
@@ -10,13 +11,12 @@ public class PlayerController2D : MonoBehaviour
     Vector2 input;
 
     [Header("Rotation")]
-    [SerializeField] GameObject firepoint;
     [SerializeField] bool rotationEnabled;
-    [SerializeField] float rotationIntensity;
+    [SerializeField] float rotationAngle;
     [SerializeField] float rotationSpeed;
-    Vector3 firepointLeftPos;
-    Vector3 firepointRightPos;
-    Vector3 firepointDefaultPos;
+    float angleDefault;
+    float angleLeft;
+    float angleRight;
 
     void Awake()
     {
@@ -30,10 +30,10 @@ public class PlayerController2D : MonoBehaviour
 
     void SetFirepointPositions()
     {
-        // Setting imaginary most left and most right points for firepoint
-        firepointDefaultPos = firepoint.transform.localPosition;
-        firepointLeftPos = firepointDefaultPos + new Vector3(-rotationIntensity, 0, 0);
-        firepointRightPos = firepointDefaultPos + new Vector3(rotationIntensity, 0, 0);
+        // Setting most left and most right angle values
+        angleDefault = transform.eulerAngles.z;
+        angleLeft = angleLeft + rotationAngle;
+        angleRight = angleRight - rotationAngle;
     }
 
     void Update()
@@ -47,18 +47,11 @@ public class PlayerController2D : MonoBehaviour
         // checking if rotation is enabled
         if (rotationEnabled == false) return;
 
-        // Moving the firepoint to left or right point depending on the input
-        if (Input.GetAxis("Horizontal") > 0) 
-        {
-            firepoint.transform.localPosition = Vector3.Lerp(firepointDefaultPos, firepointRightPos, Input.GetAxis("Horizontal"));
-        }
-        else 
-        {
-            firepoint.transform.localPosition = Vector3.Lerp(firepointDefaultPos, firepointLeftPos, Input.GetAxis("Horizontal"));
-        }
+        // calculating rotation
+        float currentAngle = (input.x > 0) ? angleRight * input.x : angleLeft * -input.x;
 
-        // Making the spaceship always be facing the firepoint
-        transform.LookAt(firepoint.transform);
+        // rotating the spaceship
+        transform.eulerAngles = new Vector3(0, 0, currentAngle);
     }
 
     void MoveInput()
