@@ -8,7 +8,7 @@ public class HazardSpawnPoint : MonoBehaviour
     // Direction the hazard will move (2D)
     public Vector2 Direction
     {
-        get { return transform.right.normalized; }
+        get { return transform.up.normalized; }
     }
 
     void OnDrawGizmos()

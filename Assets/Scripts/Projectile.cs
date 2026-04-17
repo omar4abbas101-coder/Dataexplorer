@@ -2,20 +2,29 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 12f;
+    [Header("properties")]
+    [SerializeField] float speed = 4f;
     public float lifeTime = 2f;
 
-    Vector2 direction = Vector2.up;
-
-    public void Init(Vector2 dir)
+    private void Start()
     {
-        direction = dir.normalized;
+        Init();
+    }
+    public void Init()
+    {
         Destroy(gameObject, lifeTime);
     }
 
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        Movement();
+    }
+
+    // Making projectile move forward
+    void Movement()
+    {
+        // moving the projectile
+        transform.Translate(0f, speed * Time.deltaTime, 0f, Space.Self);
     }
 
    void OnTriggerEnter2D(Collider2D other)
