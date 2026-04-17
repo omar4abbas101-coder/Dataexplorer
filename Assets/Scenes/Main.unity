@@ -1901,14 +1901,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5146339320547366725, guid: 106a6aafdfab262428f48268e3505856, type: 3}
-      propertyPath: rotationAngle
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146339320547366725, guid: 106a6aafdfab262428f48268e3505856, type: 3}
-      propertyPath: rotationEnabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146339320547366725, guid: 106a6aafdfab262428f48268e3505856, type: 3}
       propertyPath: rotationIntensity
       value: 0.5
       objectReference: {fileID: 0}

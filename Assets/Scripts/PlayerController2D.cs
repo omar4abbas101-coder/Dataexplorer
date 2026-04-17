@@ -13,8 +13,6 @@ public class PlayerController2D : MonoBehaviour
     [Header("Rotation")]
     [SerializeField] bool rotationEnabled;
     [SerializeField] float rotationAngle;
-    [SerializeField] float rotationSpeed;
-    float angleDefault;
     float angleLeft;
     float angleRight;
 
@@ -31,7 +29,6 @@ public class PlayerController2D : MonoBehaviour
     void SetFirepointPositions()
     {
         // Setting most left and most right angle values
-        angleDefault = transform.eulerAngles.z;
         angleLeft = angleLeft + rotationAngle;
         angleRight = angleRight - rotationAngle;
     }

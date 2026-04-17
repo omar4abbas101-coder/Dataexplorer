@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3374444414806821640}
   - component: {fileID: 3961618058603664426}
   - component: {fileID: 2487029581825984867}
+  - component: {fileID: 8910448954748466240}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Hazard
@@ -103,7 +104,7 @@ MonoBehaviour:
   sprite: {fileID: 7894618148163979919}
   baseSpeed: 4
   rotationRange: 20
-  lifeTime: 20
+  lifeTime: 5
   rotationSpeed: 100
 --- !u!58 &2487029581825984867
 CircleCollider2D:
@@ -121,6 +122,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.3}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &8910448954748466240
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539739180534666432}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3014002956335773718
 GameObject:
   m_ObjectHideFlags: 0

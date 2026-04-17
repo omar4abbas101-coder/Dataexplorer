@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   rotationEnabled: 1
-  rotationAngle: 0
+  rotationAngle: 30
   rotationSpeed: 0
 --- !u!114 &610432897515520728
 MonoBehaviour:
