@@ -5,18 +5,19 @@ using TMPro;
 public class GameOverUI : MonoBehaviour
 {
     public TextMeshProUGUI finalScoreText;
-    public string mainMenuSceneName = "Mainmenu"; // <- put your menu scene name here
+    public string mainMenuSceneName = "Mainmenu";
 
     void Start()
     {
-        int score = (GameManager.Instance != null) ? GameManager.Instance.Score : 0;
+        int score = PlayerPrefs.GetInt("FinalScore", 0);
+
         if (finalScoreText != null)
             finalScoreText.text = $"FINAL SCORE: {score}";
     }
 
     public void Retry()
     {
-        Time.timeScale = 1f;                 // IMPORTANT
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName);
     }
 }

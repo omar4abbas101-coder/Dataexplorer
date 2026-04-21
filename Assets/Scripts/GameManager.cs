@@ -96,13 +96,17 @@ public class GameManager : MonoBehaviour
     }
 
     void GameOver()
-    {
-        if (isGameOver) return;
+{
+    if (isGameOver) return;
 
-        isGameOver = true;
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(gameOverSceneName);
-    }
+    isGameOver = true;
+
+    // Save score
+    PlayerPrefs.SetInt("FinalScore", score);
+
+    Time.timeScale = 1f;
+    SceneManager.LoadScene(gameOverSceneName);
+}
 
     void RefreshUI()
     {
