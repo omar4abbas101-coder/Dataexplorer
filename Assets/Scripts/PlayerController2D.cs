@@ -41,7 +41,7 @@ public class PlayerController2D : MonoBehaviour
 
     void RotateShip()
     {
-        // checking if rotation is enabled
+        // checking if rotation is enabled 
         if (rotationEnabled == false) return;
 
         // calculating rotation
@@ -59,7 +59,7 @@ public class PlayerController2D : MonoBehaviour
         // Increasing Sensitivity will make the ship accelerate faster
 
         input = new Vector2(
-            Input.GetAxis("Horizontal"),
+            Input.GetAxis("Horizontal"), 
             Input.GetAxis("Vertical")
         );
 

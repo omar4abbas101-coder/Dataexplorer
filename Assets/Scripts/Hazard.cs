@@ -40,13 +40,11 @@ public class Hazard : MonoBehaviour
     // moving the asteroid
     void Movement()
     {
-        // I removed all the unnecessary code and simplified the movement (it could be simplified further)
-
         float speed = baseSpeed;
         if (DifficultySettings.Instance != null)
             speed *= DifficultySettings.Instance.GetTuning().hazardSpeedMultiplier;
 
-        transform.Translate(0, speed * Time.deltaTime, 0, Space.Self);
+        transform.Translate(0, speed * Time.deltaTime, 0, Space.Self); // << this is the only line you need to make asteroids move
     }
 
     public int GetScoreValue()
