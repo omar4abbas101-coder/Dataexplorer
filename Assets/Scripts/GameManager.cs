@@ -14,6 +14,13 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] UIManager uiManager;
 
+    [Header("Level")]
+    Vector3 bottomLeft;
+    Vector3 topRight;
+
+    [Header("Spawners")]
+    [HideInInspector] public EnemySpawner enemySpawner;
+
     int score;
     int hp;
 
@@ -35,6 +42,8 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+
+        DefineScreenCoords();
     }
 
     void Start()
@@ -46,6 +55,28 @@ public class GameManager : MonoBehaviour
 
         RefreshUI();
     }
+    
+    // ==============================
+    // SCREEN POINTS
+    // ==============================
+
+    // getting screen border points in world coordinates
+    void DefineScreenCoords()
+    {
+        // getting screen border coords
+        Camera camera = Camera.main;
+
+        bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
+        topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
+    }
+
+    // GETTING SCREEN POINTS
+    public float GetScreenTop() => topRight.y;
+    public float GetScreenBottom() => bottomLeft.y;
+    public float GetScreenLeft() => bottomLeft.x;
+    public float GetScreenRight() => topRight.x;
+
+    // ==============================
 
     public void AddScore(int amount)
     {
