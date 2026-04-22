@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int startHP = 3;
     [SerializeField] string gameOverSceneName = "GameOver";
     [SerializeField] float invincibleSecondsAfterHit = 1f;
+    [HideInInspector] public bool pause = true;
 
     [Header("UI")]
     [SerializeField] UIManager uiManager;
@@ -19,7 +20,12 @@ public class GameManager : MonoBehaviour
     Vector3 topRight;
 
     [Header("Spawners")]
-    [HideInInspector] public EnemySpawner enemySpawner;
+    public EnemySpawner enemySpawner;
+    public SpawnHazard hazardSpawner;
+
+    [Header("Waves")]
+    public WaveManager waveManager;
+    public WaveScrObj currentWave;
 
     int score;
     int hp;
@@ -54,6 +60,9 @@ public class GameManager : MonoBehaviour
         isInvincible = false;
 
         RefreshUI();
+
+        // Launching first wave
+        StartCoroutine(waveManager.NextWaveTransition());
     }
     
     // ==============================
@@ -138,6 +147,15 @@ public class GameManager : MonoBehaviour
     Time.timeScale = 1f;
     SceneManager.LoadScene(gameOverSceneName);
 }
+
+    public void GameFinished()
+    {
+        // text saying you have won the game and displaying current score
+
+        // temporary solution
+        waveManager.waveText.gameObject.SetActive(true);
+        waveManager.waveText.text = "Congratz! you won!";
+    }
 
     void RefreshUI()
     {

@@ -28,8 +28,8 @@ public class SpawnPickup : MonoBehaviour
 
     void Spawn()
     {
-        if (pickupPrefab == null) return;
-        if (spawnPoints == null || spawnPoints.Length == 0) return;
+        if (pickupPrefab == null || spawnPoints == null 
+            || spawnPoints.Length == 0 || GameManager.Instance.pause) return;
 
         GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
         if (pickups.Length >= maxPickups) return;

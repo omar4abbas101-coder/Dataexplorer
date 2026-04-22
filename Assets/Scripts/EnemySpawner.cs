@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawner attributes")]
-    public int maxEnemyAmount;
-    public int enemySpawnIntervals;
-    public int enemiesLeft;
-    List<Enemy> enemies = new List<Enemy> ();
+    public int maxEnemyAmount = 0;
+    float enemySpawnIntervals = 100;
+    public int enemiesLeft = 10;
+    List<Enemy> enemies = new List<Enemy>();
 
     [Header("Prefabs")]
     [SerializeField] GameObject enemyPrefab;
@@ -20,9 +21,11 @@ public class EnemySpawner : MonoBehaviour
         // adding reference to this spawner to game manager
         GameManager.Instance.enemySpawner = this;
     }
-    public void SetSpawnerParams()
+    public void SetSpawnerParams(WaveScrObj currentWave)
     {
-        // will be used to change spawner params when waves change
+        enemySpawnIntervals = currentWave.enemyIntervals;
+        enemiesLeft = currentWave.enemyAmount;
+        maxEnemyAmount = currentWave.maxEnemyAmount;
     }
 
     private void Update()
@@ -33,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnCheck()
     {
         // checking if more enemies are left in this wave and if max is reached
-        if (enemies.Count >= maxEnemyAmount || enemiesLeft == 0) return;
+        if (enemies.Count >= maxEnemyAmount || enemiesLeft == 0 || GameManager.Instance.pause) return;
 
         t += Time.deltaTime; // progressing timer
 
@@ -70,5 +73,8 @@ public class EnemySpawner : MonoBehaviour
 
         // decreasing number of enemies left for current wave
         enemiesLeft--;
+
+        // checking if this was the last enemy
+        if (enemiesLeft == 0) GameManager.Instance.waveManager.enemiesDone = true;
     }
 }
