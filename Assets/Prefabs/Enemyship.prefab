@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2415257129134382260}
-  m_LocalRotation: {x: -0.000020223599, y: -0.0038446265, z: -0.9999788, w: 0.005260113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -38,7 +38,7 @@ Transform:
   - {fileID: 1447196706976636291}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.441, y: 0, z: -179.397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2438553701039907815
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 44cf12cc10c9d1343abde289a1d9a1c5, type: 3}
   m_Color: {r: 1, g: 0.11707889, b: 0, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1.7066667, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
@@ -124,9 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eaa9f6f05a19e44ca41f2220e1f7a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  leftPoint: {fileID: 1447196706976636291}
-  rightPoint: {fileID: 3199302437010624556}
   fireRate: 1.5
   bulletPrefab: {fileID: 5785628466293802253, guid: c77bef313930cc04f904d7504d973920, type: 3}
   firePoint: {fileID: 434960225591806774}
@@ -142,6 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19868b89bff2c7a43843da26282cc79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  movementMargins: 2
+  appearing: 0
+  screenToShipOffset: 1.2
+  shipToShipOffset: 1
+  appearingTime: 2
   hp: 1
   scoreValue: 50
 --- !u!58 &3114987852912080729

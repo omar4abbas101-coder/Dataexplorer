@@ -10,9 +10,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] int startHP = 3;
     [SerializeField] string gameOverSceneName = "GameOver";
     [SerializeField] float invincibleSecondsAfterHit = 1f;
+    [HideInInspector] public bool pause = true;
 
     [Header("UI")]
     [SerializeField] UIManager uiManager;
+
+    [Header("Level")]
+    Vector3 bottomLeft;
+    Vector3 topRight;
+
+    [Header("Spawners")]
+    public EnemySpawner enemySpawner;
+    public SpawnHazard hazardSpawner;
+
+    [Header("Waves")]
+    public WaveManager waveManager;
+    public WaveScrObj currentWave;
 
     int score;
     int hp;
@@ -35,6 +48,8 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+
+        DefineScreenCoords();
     }
 
     void Start()
@@ -45,7 +60,32 @@ public class GameManager : MonoBehaviour
         isInvincible = false;
 
         RefreshUI();
+
+        // Launching first wave
+        StartCoroutine(waveManager.NextWaveTransition());
     }
+    
+    // ==============================
+    // SCREEN POINTS
+    // ==============================
+
+    // getting screen border points in world coordinates
+    void DefineScreenCoords()
+    {
+        // getting screen border coords
+        Camera camera = Camera.main;
+
+        bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
+        topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
+    }
+
+    // GETTING SCREEN POINTS
+    public float GetScreenTop() => topRight.y;
+    public float GetScreenBottom() => bottomLeft.y;
+    public float GetScreenLeft() => bottomLeft.x;
+    public float GetScreenRight() => topRight.x;
+
+    // ==============================
 
     public void AddScore(int amount)
     {
@@ -107,6 +147,15 @@ public class GameManager : MonoBehaviour
     Time.timeScale = 1f;
     SceneManager.LoadScene(gameOverSceneName);
 }
+
+    public void GameFinished()
+    {
+        // text saying you have won the game and displaying current score
+
+        // temporary solution
+        waveManager.waveText.gameObject.SetActive(true);
+        waveManager.waveText.text = "Congratz! you won!";
+    }
 
     void RefreshUI()
     {

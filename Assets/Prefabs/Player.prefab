@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 1221118645}
   - component: {fileID: 4743262373788142546}
   m_Layer: 6
-  m_Name: Square
+  m_Name: playerObj
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,6 @@ MonoBehaviour:
   moveSpeed: 6
   rotationEnabled: 1
   rotationAngle: 30
-  rotationSpeed: 0
 --- !u!114 &610432897515520728
 MonoBehaviour:
   m_ObjectHideFlags: 0
