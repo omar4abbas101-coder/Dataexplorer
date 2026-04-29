@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   asteroidTime: 20
-  enemyAmount: 0
   asteroidIntervals: 1.5
+  enemyAmount: 0
   enemyIntervals: 0
+  maxEnemyAmount: 0
+  laserAmount: 0
+  laserMinInterval: 0
+  laserMaxInterval: 0
+  laserMinSize: 0
+  laserMaxSize: 0
+  laserRotationChance: 0
+  laserSpeed: 0

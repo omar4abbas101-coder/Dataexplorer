@@ -14,6 +14,12 @@ public class WaveScrObj : ScriptableObject
     public float enemyIntervals;
     public int maxEnemyAmount;
 
-    //[Header("Lazer parameters")]
-    // lazer parameters here
+    [Header("Lazer parameters")]
+    public int laserAmount;
+    public float laserMinInterval;
+    public float laserMaxInterval;
+    public float laserMinSize;
+    public float laserMaxSize;
+    public float laserRotationChance;
+    public float laserSpeed;
 }
