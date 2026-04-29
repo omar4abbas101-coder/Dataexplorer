@@ -30,6 +30,7 @@ public class WaveManager : MonoBehaviour
         // resetting the spawners
         GameManager.Instance.hazardSpawner.SetSpawnerParams(waves[currentWave]);
         GameManager.Instance.enemySpawner.SetSpawnerParams(waves[currentWave]);
+        GameManager.Instance.laserSpawner.SetSpawnerParams(waves[currentWave]);
 
         // resetitng the checks
         enemiesDone = waves[currentWave].enemyAmount == 0;

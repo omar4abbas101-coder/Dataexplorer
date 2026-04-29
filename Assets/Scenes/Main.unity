@@ -1420,6 +1420,7 @@ Transform:
   - {fileID: 711210058}
   - {fileID: 1458675096}
   - {fileID: 1542748676}
+  - {fileID: 1741761014}
   m_Father: {fileID: 1687086615}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1548,10 +1549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2134c9bd0e7b4cc42a27f8cfe54a74e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnemyAmount: 3
-  enemiesLeft: 10
   enemyPrefab: {fileID: 2415257129134382260, guid: 502672d557632494f9321c10ac45d984, type: 3}
-  t: 0
 --- !u!1 &1552610896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1774,7 @@ MonoBehaviour:
   uiManager: {fileID: 372461645}
   enemySpawner: {fileID: 1542748677}
   hazardSpawner: {fileID: 819660280}
+  laserSpawner: {fileID: 1741761015}
   waveManager: {fileID: 649915142}
   currentWave: {fileID: 0}
 --- !u!4 &1667305906
@@ -1843,6 +1842,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1741761013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741761014}
+  - component: {fileID: 1741761015}
+  m_Layer: 0
+  m_Name: LaserSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1741761014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741761013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1172074250}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741761015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741761013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f91f0bf9f4a144b96a13237012be57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleRotations:
+  - 30
+  - 45
+  laserPrefab: {fileID: 8246353200627728730, guid: a8a6b7f8de15d9f4f94815747554a553, type: 3}
 --- !u!1 &1811564119
 GameObject:
   m_ObjectHideFlags: 0

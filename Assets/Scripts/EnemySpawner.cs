@@ -6,15 +6,15 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawner attributes")]
-    public int maxEnemyAmount = 0;
+    int maxEnemyAmount = 0;
     float enemySpawnIntervals = 100;
-    public int enemiesLeft = 10;
+    int enemiesLeft = 10;
     List<Enemy> enemies = new List<Enemy>();
 
     [Header("Prefabs")]
     [SerializeField] GameObject enemyPrefab;
 
-    public float t = 0;
+    float t = 0;
 
     private void Start()
     {

@@ -17,3 +17,10 @@ MonoBehaviour:
   enemyAmount: 15
   enemyIntervals: 6
   maxEnemyAmount: 4
+  laserAmount: 14
+  laserMinInterval: 1
+  laserMaxInterval: 6
+  laserMinSize: 1
+  laserMaxSize: 6
+  laserRotationChance: 0.2
+  laserSpeed: 2.5
