@@ -1710,6 +1710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6924f1c334a65438c544f1f64454da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 2d00f23a1e8386b409bccf5ba2de192b, type: 2}
+  difficulty: {fileID: 11400000, guid: 80ed0460945c7b346a9ba6b2d288a633, type: 2}
   startHP: 3
   gameOverSceneName: GameOver
   invincibleSecondsAfterHit: 4

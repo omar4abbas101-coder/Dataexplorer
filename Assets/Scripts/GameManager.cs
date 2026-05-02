@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [Header("GameSettings")]
+    public GameSettings settings;
+    public GameDifficultyScrObj difficulty;
+
     [Header("Game State")]
     [SerializeField] int startHP = 3;
     [SerializeField] string gameOverSceneName = "GameOver";
@@ -51,6 +55,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         DefineScreenCoords();
+
+        // setting the difficutly
+        difficulty = settings.difficulty;
+        Debug.Log("GameManager: Difficulty is set to: " + difficulty.name);
     }
 
     void Start()
