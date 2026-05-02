@@ -36,6 +36,6 @@ public class DifficultyButton : MonoBehaviour
         gameSettings.difficulty = difficulty;
 
         // loads the scene
-        SceneManager.LoadScene("Main");
+        SceneLoader.instance.LoadScene("Main", 2.2f);
     }
 }

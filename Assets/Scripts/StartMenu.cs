@@ -8,7 +8,7 @@ public class StartMenu : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(gameSceneName);
+        SceneLoader.instance.LoadScene(gameSceneName);
     }
 
     public void QuitGame()
