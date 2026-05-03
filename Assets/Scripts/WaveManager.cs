@@ -21,6 +21,7 @@ public class WaveManager : MonoBehaviour
     [Header("transition checks")]
     public bool asteroidsDone = false;
     public bool enemiesDone = false;
+    public bool lasersDone = false;
 
     void NewWave()
     {
@@ -35,6 +36,7 @@ public class WaveManager : MonoBehaviour
         // resetitng the checks
         enemiesDone = waves[currentWave].enemyAmount == 0;
         asteroidsDone = waves[currentWave].asteroidTime == 0;
+        lasersDone = waves[currentWave].laserAmount == 0;
 
         // unpausing the spawning
         GameManager.Instance.pause = false;
@@ -48,7 +50,7 @@ public class WaveManager : MonoBehaviour
     void NextWaveCheck()
     {
         // checks if current wave is done.
-        if (asteroidsDone && enemiesDone && GameManager.Instance.pause == false) FinishWave();
+        if (asteroidsDone && enemiesDone && lasersDone && GameManager.Instance.pause == false) FinishWave();
     }
 
     void FinishWave()

@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   color: {r: 0.46169454, g: 0.79403096, b: 0.9339623, a: 1}
+  waves:
+  - {fileID: 11400000, guid: 4e2700b280dfadb41818d99a50cb1821, type: 2}
+  - {fileID: 11400000, guid: 53411ec85f5cefe45a896d463b9bd1e7, type: 2}
+  - {fileID: 11400000, guid: 76e21b1199f51ac48ab7b099c3abdd17, type: 2}

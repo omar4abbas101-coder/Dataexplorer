@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Hard
   m_EditorClassIdentifier: 
   color: {r: 0.8867924, g: 0.36308295, b: 0.36308295, a: 1}
+  waves:
+  - {fileID: 11400000, guid: 76e21b1199f51ac48ab7b099c3abdd17, type: 2}
+  - {fileID: 11400000, guid: 76e21b1199f51ac48ab7b099c3abdd17, type: 2}
+  - {fileID: 11400000, guid: 76e21b1199f51ac48ab7b099c3abdd17, type: 2}

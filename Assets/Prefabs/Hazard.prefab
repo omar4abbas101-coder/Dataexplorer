@@ -104,7 +104,7 @@ MonoBehaviour:
   sprite: {fileID: 7894618148163979919}
   baseSpeed: 4
   rotationRange: 20
-  lifeTime: 5
+  lifeTime: 15
   rotationSpeed: 100
 --- !u!58 &2487029581825984867
 CircleCollider2D:

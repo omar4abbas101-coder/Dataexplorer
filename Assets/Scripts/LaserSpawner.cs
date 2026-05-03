@@ -40,7 +40,7 @@ public class LaserSpawner : MonoBehaviour
 
     void LaserTimer()
     {
-        if (laserPrefab == null || GameManager.Instance.pause || lasersLeft <= 0 || nextLaserInterval == 0) return;
+        if (laserPrefab == null || GameManager.Instance.pause || nextLaserInterval == 0) return;
 
         // increasing timer
         t += Time.deltaTime;
@@ -58,6 +58,13 @@ public class LaserSpawner : MonoBehaviour
 
     void SpawnLaser()
     {
+        // communicating to wave manager if there are no laser left
+        if (lasersLeft <= 0)
+        {
+            GameManager.Instance.waveManager.lasersDone = true;
+            return;
+        }
+
         // LASER POSITION
         // calculating random starting x position
         float minX = GameManager.Instance.GetScreenLeft() +1;

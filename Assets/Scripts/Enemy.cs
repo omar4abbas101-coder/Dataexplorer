@@ -4,7 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 3f;
+    [HideInInspector] public float moveSpeed = 3f;
     public float movementMargins = 0;
     float leftX;
     float rightX;

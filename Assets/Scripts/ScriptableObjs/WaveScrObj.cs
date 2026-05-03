@@ -8,11 +8,13 @@ public class WaveScrObj : ScriptableObject
     [Header("Asteroid parameters")]
     public float asteroidTime;
     public float asteroidIntervals;
+    public float asteroidSpeed;
 
     [Header("Enemy Spaceship parameters")]
     public int enemyAmount;
     public float enemyIntervals;
     public int maxEnemyAmount;
+    public float enemySpeed;
 
     [Header("Lazer parameters")]
     public int laserAmount;

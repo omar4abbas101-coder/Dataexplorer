@@ -201,9 +201,9 @@ MonoBehaviour:
   transitionFog: {fileID: 6014592641460591868}
   loadingObj: {fileID: 7063735538037554346}
   loadingIcon: {fileID: 3977108417447480094}
-  transitionTime: 0.6
+  transitionTime: 0.5
   fakeLoading: 1
-  loadingSpinIntensity: 1.2
+  loadingSpinIntensity: 2
 --- !u!1 &6014592642068406641
 GameObject:
   m_ObjectHideFlags: 0

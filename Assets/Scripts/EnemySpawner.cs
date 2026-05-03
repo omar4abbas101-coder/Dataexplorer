@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Spawner attributes")]
     int maxEnemyAmount = 0;
     float enemySpawnIntervals = 100;
+    float enemySpeed;
     int enemiesLeft = 10;
     List<Enemy> enemies = new List<Enemy>();
 
@@ -26,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
         enemySpawnIntervals = currentWave.enemyIntervals;
         enemiesLeft = currentWave.enemyAmount;
         maxEnemyAmount = currentWave.maxEnemyAmount;
+        enemySpeed = currentWave.enemySpeed;
     }
 
     private void Update()
@@ -63,6 +65,8 @@ public class EnemySpawner : MonoBehaviour
 
         // SPAWNING THE ENEMY
         Enemy newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity).GetComponent<Enemy>();
+        // setting the speed
+        newEnemy.moveSpeed = enemySpeed;
         enemies.Add(newEnemy);
     }
 

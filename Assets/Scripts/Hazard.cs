@@ -6,9 +6,9 @@ public class Hazard : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
 
     [Header("properties")]
-    [SerializeField] float baseSpeed = 4f;
+    [HideInInspector] public float baseSpeed = 4f;
     [SerializeField] float rotationRange = 10f;
-    [SerializeField] float lifeTime = 20f;
+    [SerializeField] float lifeTime = 300f;
     [SerializeField] float rotationSpeed = 1f;
 
     private void Start()

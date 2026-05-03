@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidTime: 90
   asteroidIntervals: 1.2
+  asteroidSpeed: 5
   enemyAmount: 15
   enemyIntervals: 6
   maxEnemyAmount: 4
+  enemySpeed: 5
   laserAmount: 14
   laserMinInterval: 1
   laserMaxInterval: 6

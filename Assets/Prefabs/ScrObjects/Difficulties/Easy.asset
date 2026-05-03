@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Easy
   m_EditorClassIdentifier: 
   color: {r: 0.5442506, g: 0.9245283, b: 0.62664413, a: 1}
+  waves:
+  - {fileID: 11400000, guid: 4e2700b280dfadb41818d99a50cb1821, type: 2}
+  - {fileID: 11400000, guid: 4e2700b280dfadb41818d99a50cb1821, type: 2}
+  - {fileID: 11400000, guid: 4e2700b280dfadb41818d99a50cb1821, type: 2}

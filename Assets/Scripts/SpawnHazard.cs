@@ -7,6 +7,7 @@ public class SpawnHazard : MonoBehaviour
     public Transform[] spawnPoints;
     public int maxHazards = 50;
     float interval = 1.5f;
+    float asteroidSpeed = 0;
 
     float timer;
     float asteroidTimer = 0;
@@ -15,14 +16,12 @@ public class SpawnHazard : MonoBehaviour
     {
         asteroidTimer = currentWave.asteroidTime;
         interval = currentWave.asteroidIntervals;
+        asteroidSpeed = currentWave.asteroidSpeed;
     }
 
     void Update()
     {
         if (GameManager.Instance != null && GameManager.Instance.IsGameOver) return;
-
-        //if (DifficultySettings.Instance != null)
-        //    interval = DifficultySettings.Instance.GetTuning().hazardSpawnInterval;
 
         timer += Time.deltaTime;
         WaveAsteroidsTimer();
@@ -49,6 +48,9 @@ public class SpawnHazard : MonoBehaviour
         if (hazards.Length >= maxHazards) return;
 
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(hazardPrefab, sp.position, sp.rotation);
+        Hazard newHazard = Instantiate(hazardPrefab, sp.position, sp.rotation).GetComponent<Hazard>();
+
+        // setting the speed
+        newHazard.baseSpeed = asteroidSpeed;
     }
 }

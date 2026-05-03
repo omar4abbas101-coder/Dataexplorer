@@ -770,6 +770,7 @@ MonoBehaviour:
   transitioning: 0
   asteroidsDone: 0
   enemiesDone: 0
+  lasersDone: 0
 --- !u!1 &693150584
 GameObject:
   m_ObjectHideFlags: 0

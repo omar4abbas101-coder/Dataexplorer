@@ -48,6 +48,9 @@ public class SceneLoader : MonoBehaviour
         // enabling the fog
         transitionFog.SetActive(true);
 
+        // let the scene load for a bit
+        if (!fadeIn) yield return new WaitForSeconds(0.2f);
+
         // preparing the variables
         Vector3 startingPos = transitionFog.transform.localPosition;
         float cameraHeight = 1200f;
@@ -63,7 +66,7 @@ public class SceneLoader : MonoBehaviour
             t += Time.deltaTime;
 
             float clampedT = t / transitionT;
-            float coolT = (fadeIn) ? 1 - (1 - clampedT) * (1 - clampedT) : clampedT * clampedT;
+            float coolT = (fadeIn) ? clampedT : 1 - (1 - clampedT) * (1 - clampedT);
 
             transitionFog.transform.localPosition = Vector3.Lerp(startingPos, targetPos, coolT);
             yield return null;

@@ -6,4 +6,6 @@ using UnityEngine;
 public class GameDifficultyScrObj : ScriptableObject
 {
     public Color color;
+
+    public List<WaveScrObj> waves;
 }

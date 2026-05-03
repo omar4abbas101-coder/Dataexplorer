@@ -69,6 +69,9 @@ public class GameManager : MonoBehaviour
         isInvincible = false;
 
         RefreshUI();
+ 
+        // Passing wave list to wave manager
+        waveManager.waves = difficulty.waves;
 
         // Launching first wave
         StartCoroutine(waveManager.NextWaveTransition());
