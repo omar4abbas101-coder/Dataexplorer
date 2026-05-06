@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c828c4ee0ea6d5942b7b259659cd37c6, type: 3}
-  m_Name: Wave 3
+  m_Name: Wave 1
   m_EditorClassIdentifier: 
-  asteroidTime: 90
-  asteroidIntervals: 1.2
-  asteroidSpeed: 5
-  enemyAmount: 15
-  enemyIntervals: 6
-  maxEnemyAmount: 4
-  enemySpeed: 5
-  laserAmount: 14
-  laserMinInterval: 1
-  laserMaxInterval: 6
-  laserMinSize: 1
-  laserMaxSize: 6
-  laserRotationChance: 0.2
-  laserSpeed: 2.5
+  asteroidTime: 15
+  asteroidIntervals: 0.5
+  asteroidSpeed: 4
+  enemyAmount: 8
+  enemyIntervals: 2
+  maxEnemyAmount: 3
+  enemySpeed: 3
+  laserAmount: 0
+  laserMinInterval: 0
+  laserMaxInterval: 0
+  laserMinSize: 0
+  laserMaxSize: 0
+  laserRotationChance: 0
+  laserSpeed: 0

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0.8867924, g: 0.36308295, b: 0.36308295, a: 1}
   waves:
-  - {fileID: 11400000, guid: 76e21b1199f51ac48ab7b099c3abdd17, type: 2}
-  - {fileID: 11400000, guid: 76e21b1199f51ac48ab7b099c3abdd17, type: 2}
-  - {fileID: 11400000, guid: 76e21b1199f51ac48ab7b099c3abdd17, type: 2}
+  - {fileID: 11400000, guid: df3b6a9cfbcf4d24e87426ff495fc3e2, type: 2}
+  - {fileID: 11400000, guid: a074792364c3ae3408383dfd4227e378, type: 2}
+  - {fileID: 11400000, guid: b397444cd9007174b8494b0395288c1a, type: 2}
+  - {fileID: 11400000, guid: 92815aca911ac5c439a79e3bb23a556a, type: 2}
