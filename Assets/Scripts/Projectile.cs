@@ -35,9 +35,6 @@ public class Projectile : MonoBehaviour
     {
         enemy.TakeDamage(1);
 
-        if (CameraShake.Instance != null)
-            CameraShake.Instance.Shake();
-
         Destroy(gameObject);
         return;
     }

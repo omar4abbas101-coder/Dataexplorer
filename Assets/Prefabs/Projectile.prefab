@@ -127,10 +127,10 @@ GameObject:
   - component: {fileID: 1756456360491354514}
   - component: {fileID: 4446281874620709304}
   - component: {fileID: 2137035808216301112}
-  - component: {fileID: 4334084140681207724}
+  - component: {fileID: 8546777546750157555}
   m_Layer: 7
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
   magnetUpdateInterval: 0.05
   showMagnetGizmos: 1
   magnetPreviewRadius: 3
---- !u!58 &4334084140681207724
-CircleCollider2D:
+--- !u!61 &8546777546750157555
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -195,9 +195,19 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 1
+  m_Size: {x: 1.3, y: 1.3}
+  m_EdgeRadius: 0
