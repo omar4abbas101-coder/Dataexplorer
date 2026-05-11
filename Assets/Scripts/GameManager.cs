@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public EnemySpawner enemySpawner;
     public SpawnHazard hazardSpawner;
     public LaserSpawner laserSpawner;
+    public PowerUpManager powerUpManager; 
 
     [Header("Waves")]
     public WaveManager waveManager;

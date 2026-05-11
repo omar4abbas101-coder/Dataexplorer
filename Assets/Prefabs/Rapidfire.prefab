@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   duration: 5
+  fallingSpeed: 0.01
   rapidFireCooldownMultiplier: 0.5
   magnetRadius: 6
   magnetPullSpeed: 30

@@ -139,14 +139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19868b89bff2c7a43843da26282cc79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dodgePrefab: {fileID: 6723560472104859727, guid: 7ab410462289e7b4389bd2d05fe2df96, type: 3}
+  sprite: {fileID: 2438553701039907815}
   moveSpeed: 3
   movementMargins: 2
+  moveDirection: 1
   appearing: 0
   screenToShipOffset: 1.2
   shipToShipOffset: 1
   appearingTime: 2
+  blinkingInterval: 0.3
   hp: 1
   scoreValue: 50
+  dodging: 1
 --- !u!58 &3114987852912080729
 CircleCollider2D:
   m_ObjectHideFlags: 0
