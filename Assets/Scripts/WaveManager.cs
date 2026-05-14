@@ -34,7 +34,7 @@ public class WaveManager : MonoBehaviour
         GameManager.Instance.laserSpawner.SetSpawnerParams(waves[currentWave]);
 
         // resetitng the checks
-        enemiesDone = waves[currentWave].enemyAmount == 0;
+        enemiesDone = waves[currentWave].enemies.Count == 0;
         asteroidsDone = waves[currentWave].asteroidTime == 0;
         lasersDone = waves[currentWave].laserAmount == 0;
 
