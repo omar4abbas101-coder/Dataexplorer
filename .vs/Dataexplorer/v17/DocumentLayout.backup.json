@@ -3,32 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\wavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\wavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\sceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\powerupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\scriptableobjs\\gamedifficultyscrobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scriptableobjs\\gamedifficultyscrobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\powerupmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerupmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\doublebulletpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\doublebulletpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\speedboostpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\speedboostpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\poweruppickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\poweruppickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\powerupmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerupmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\speedboostpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\speedboostpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\difficultybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\playercontroller2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\bulletdodge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,20 +63,8 @@
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\wavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\wavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\powerupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\hazard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hazard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\scriptableobjs\\gamedifficultyscrobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scriptableobjs\\gamedifficultyscrobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\scriptableobjs\\wavescrobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\laserspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\laserspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\sceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\scriptableobjs\\gamesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,37 +118,51 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 23,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "GameDifficultyScrObj.cs",
+              "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
+              "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T11:56:02.486Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "DoubleBulletPowerUp.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\DoubleBulletPowerUp.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DoubleBulletPowerUp.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\DoubleBulletPowerUp.cs",
               "RelativeToolTip": "Assets\\Scripts\\DoubleBulletPowerUp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T09:43:15.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "PowerUpMovement.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PowerUpMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUpMovement.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PowerUpMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\PowerUpMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T09:40:06.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "PlayerController2D.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PlayerController2D.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController2D.cs",
@@ -160,13 +174,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "SpeedBoostPickup.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\SpeedBoostPickup.cs",
               "RelativeDocumentMoniker": "Assets\\SpeedBoostPickup.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\SpeedBoostPickup.cs",
               "RelativeToolTip": "Assets\\SpeedBoostPickup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T09:29:03.093Z",
               "EditorCaption": ""
@@ -179,38 +193,40 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerShooter.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PlayerShooter.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerShooter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCwAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T09:17:19.291Z"
+              "WhenOpened": "2026-05-14T09:17:19.291Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "PowerUpPickup.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PowerUpPickup.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUpPickup.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PowerUpPickup.cs",
               "RelativeToolTip": "Assets\\Scripts\\PowerUpPickup.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-11T12:48:56.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "PowerUpManager.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PowerUpManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUpManager.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PowerUpManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\PowerUpManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACYAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T12:11:46.665Z"
+              "WhenOpened": "2026-05-11T12:11:46.665Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Projectile.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\Projectile.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Projectile.cs",
@@ -222,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "BulletDodge.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\BulletDodge.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BulletDodge.cs",
@@ -234,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "StartMenu.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\StartMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StartMenu.cs",
@@ -246,15 +262,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 2,
               "Title": "SceneLoader.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\SceneLoader.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SceneLoader.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\SceneLoader.cs",
               "RelativeToolTip": "Assets\\Scripts\\SceneLoader.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwDMAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAADMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T12:37:56.355Z"
+              "WhenOpened": "2026-05-02T12:37:56.355Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -270,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "DifficultyButton.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\DifficultyButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DifficultyButton.cs",
@@ -278,20 +295,7 @@
               "RelativeToolTip": "Assets\\Scripts\\DifficultyButton.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T12:02:36.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GameDifficultyScrObj.cs",
-              "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
-              "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ScriptableObjs\\GameDifficultyScrObj.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T11:56:02.486Z"
+              "WhenOpened": "2026-05-02T12:02:36.648Z"
             },
             {
               "$type": "Document",
@@ -307,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Hazard.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\Hazard.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Hazard.cs",
@@ -331,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "LaserSpawner.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\LaserSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LaserSpawner.cs",
@@ -355,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "SpawnHazard.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\SpawnHazard.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnHazard.cs",
@@ -367,19 +371,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "WaveManager.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\WaveManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WaveManager.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\WaveManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\WaveManager.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAACQAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAEIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T09:00:47.147Z"
+              "WhenOpened": "2026-04-22T09:00:47.147Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "WaveScrObj.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\ScriptableObjs\\WaveScrObj.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScriptableObjs\\WaveScrObj.cs",
@@ -391,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "EnemySpawner.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
@@ -403,19 +408,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwB0AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T17:28:36.881Z"
+              "WhenOpened": "2026-04-21T17:28:36.881Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
@@ -427,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "EnemyBullet.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\EnemyBullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBullet.cs",
