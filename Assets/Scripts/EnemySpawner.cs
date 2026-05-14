@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     int maxEnemyAmount = 0;
     float enemySpawnIntervals = 100;
     float enemySpeed;
-    int enemiesLeft = 10;
+    public int enemiesLeft = 0;
     List<Enemy> enemies = new List<Enemy>();
 
     [Header("Prefabs")]
@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnCheck()
     {
         // checking if more enemies are left in this wave and if max is reached
-        if (enemies.Count >= maxEnemyAmount || enemiesLeft == 0 || GameManager.Instance.pause) return;
+        if (enemies.Count >= maxEnemyAmount || enemiesLeft - enemies.Count <= 0 || GameManager.Instance.pause) return;
 
         t += Time.deltaTime; // progressing timer
 
@@ -78,7 +78,9 @@ public class EnemySpawner : MonoBehaviour
         // decreasing number of enemies left for current wave
         enemiesLeft--;
 
+        Debug.Log("Enemy Spawner: enemies left: " + enemiesLeft);
+
         // checking if this was the last enemy
-        if (enemiesLeft == 0) GameManager.Instance.waveManager.enemiesDone = true;
+        if (enemiesLeft == 0) { GameManager.Instance.waveManager.enemiesDone = true; Debug.Log("Enemy Spawner: no more enemies left"); }
     }
 }

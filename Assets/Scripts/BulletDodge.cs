@@ -11,9 +11,12 @@ public class BulletDodge : MonoBehaviour
 
     [Header("dodging")]
     [SerializeField] float dodgeTime;
+    [SerializeField] float minDodgeSpeed;
+    [SerializeField] float maxDodgeSpeed;
     [SerializeField] float auraOffsetX;
     [SerializeField] float auraOffsetY;
     [HideInInspector] public Coroutine currentDodge;
+    float currentDodgeSpeed;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,23 +48,28 @@ public class BulletDodge : MonoBehaviour
         if (bullet == null || currentDodge != null) yield break;
 
         bool isBulletAhead = (enemy.moveDirection == 1) ? enemy.transform.position.x < bullet.transform.position.x : enemy.transform.position.x > bullet.transform.position.x;
+        float dodgeSpeed = UnityEngine.Random.Range(minDodgeSpeed, maxDodgeSpeed);
 
-        currentDodge = StartCoroutine(Dodge(isBulletAhead));
+        currentDodge = StartCoroutine(Dodge(isBulletAhead, dodgeSpeed));
     }
 
     /// <summary>
     /// Temporarily changes direction to avoid the bullet;
     /// </summary>
     /// <returns></returns>
-    IEnumerator Dodge(bool isBulletAhead)
+    IEnumerator Dodge(bool dodgeBack, float dodgeSpeed)
     {
         Debug.Log("BulletDodge: starting the dodge");
 
-        if (isBulletAhead) enemy.ChangeDirection();
-        enemy.moveSpeed *= 2;
-        yield return new WaitForSeconds(dodgeTime);
-        enemy.moveSpeed /= 2;
-        if (isBulletAhead) enemy.ChangeDirection();
+        if (dodgeBack) enemy.ChangeDirection();
+        enemy.moveSpeed *= dodgeSpeed;
+        currentDodgeSpeed = dodgeSpeed;
+
+        float dodgeT = (dodgeTime + UnityEngine.Random.Range(-0.12f, 0.12f)) / dodgeSpeed;
+        yield return new WaitForSeconds(dodgeT);
+        
+        enemy.moveSpeed /= dodgeSpeed;
+        if (dodgeBack) enemy.ChangeDirection();
 
         currentDodge = null;
     }
@@ -70,7 +78,7 @@ public class BulletDodge : MonoBehaviour
     {
         if (currentDodge == null) return;
 
-        enemy.moveSpeed /= 2;
+        enemy.moveSpeed /= currentDodgeSpeed;
         StopCoroutine(currentDodge);
         currentDodge = null;
     }
