@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     int hp;
 
     bool isGameOver;
+    float pauseBeforeFinish = 3f;
     bool isInvincible;
     Coroutine invRoutine;
 
@@ -163,11 +164,22 @@ public class GameManager : MonoBehaviour
 
     public void GameFinished()
     {
-        // text saying you have won the game and displaying current score
+        StartCoroutine(GoToFinalScene());
 
         // temporary solution
         waveManager.waveText.gameObject.SetActive(true);
         waveManager.waveText.text = "Congratz! you won!";
+    }
+
+    /// <summary>
+    /// Transition to final cutscene
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator GoToFinalScene()
+    {
+        yield return new WaitForSeconds(pauseBeforeFinish);
+
+        SceneLoader.instance.LoadScene("Final");
     }
 
     void RefreshUI()
