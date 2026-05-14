@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6740707914191372018}
   - component: {fileID: 6594226473752592296}
   - component: {fileID: 2642845838145054283}
+  - component: {fileID: 3448372028963590394}
   m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
@@ -149,7 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   duration: 5
-  fallingSpeed: 0.01
   rapidFireCooldownMultiplier: 0.5
   magnetRadius: 4
   magnetPullSpeed: 10
@@ -172,3 +172,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &3448372028963590394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2694884792024372818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75529ee6a1c20d44fbc224de5ccd39b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallingSpeed: 0.02

@@ -7,7 +7,6 @@ public class PowerUpPickup : MonoBehaviour
     [Header("Power Up")]
     public PowerUpType type = PowerUpType.RapidFire;
     public float duration = 5f;
-    public float fallingSpeed = 0.2f;
 
     [Header("Rapid Fire")]
     public float rapidFireCooldownMultiplier = 0.5f;
@@ -26,12 +25,7 @@ public class PowerUpPickup : MonoBehaviour
         col = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
     }
-
-    private void FixedUpdate()
-    {
-        transform.Translate(0f, -fallingSpeed, 0f);
-    }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (collected) return;

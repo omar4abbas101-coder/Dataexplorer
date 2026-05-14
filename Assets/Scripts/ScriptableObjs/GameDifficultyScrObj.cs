@@ -8,4 +8,8 @@ public class GameDifficultyScrObj : ScriptableObject
     public Color color;
 
     public List<WaveScrObj> waves;
+
+    [Header("power-up drop chances")]
+    public float hazardChance;
+    public float enemyChance;
 }

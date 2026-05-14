@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c4ee0ea6d5942b7b259659cd37c6, type: 3}
   m_Name: Wave 1
   m_EditorClassIdentifier: 
-  asteroidTime: 15
+  asteroidTime: 0
   asteroidIntervals: 0.5
   asteroidSpeed: 4
   enemyAmount: 8

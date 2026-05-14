@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 581466699512828336}
   - component: {fileID: 6097330019758670232}
   - component: {fileID: 1707906926078499361}
+  - component: {fileID: 649660525113985466}
   m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
@@ -101,7 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   duration: 5
-  fallingSpeed: 0.01
   rapidFireCooldownMultiplier: 0.5
   magnetRadius: 6
   magnetPullSpeed: 30
@@ -136,6 +136,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &649660525113985466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208585776086532226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75529ee6a1c20d44fbc224de5ccd39b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallingSpeed: 0.02
 --- !u!1 &6014003161680700031
 GameObject:
   m_ObjectHideFlags: 0

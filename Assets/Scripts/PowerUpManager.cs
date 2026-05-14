@@ -13,9 +13,6 @@ public class PowerUpManager : MonoBehaviour
     [Header("refs")]
     [SerializeField] List<GameObject> powerUpList;
 
-    [Header("spawn chances")]
-    public float hazardChance;
-    public float enemyChance;
     public void SpawnPowerUpCheck(EnemyType enemyType, Vector3 position)
     {
         float spawnChance = 0f;
@@ -23,8 +20,8 @@ public class PowerUpManager : MonoBehaviour
         // deciding on spawn chance
         switch (enemyType)
         {
-            case EnemyType.ENEMY: { spawnChance = enemyChance; break; }
-            case EnemyType.HAZARD: { spawnChance = hazardChance; break; }
+            case EnemyType.ENEMY: { spawnChance = GameManager.Instance.difficulty.hazardChance; break; }
+            case EnemyType.HAZARD: { spawnChance = GameManager.Instance.difficulty.enemyChance; break; }
         }
 
         // randomly deciding if power up is spawned based on chance
