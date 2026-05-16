@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\matrixeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\matrixeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\matrixsymbol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\matrixsymbol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playershooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\combopopfx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\combopopfx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\combopopfx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|c:\\users\\julij\\desktop\\gameprojects\\dataexplorer\\assets\\scripts\\finalscreenui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\assets\\scripts\\finalscreenui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2B72192-10B1-7F6B-A7F3-7FB26B650135}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\finalscreenui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,6 +59,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MatrixSymbol.cs",
+              "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\MatrixSymbol.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MatrixSymbol.cs",
+              "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\MatrixSymbol.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MatrixSymbol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T19:00:30.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MatrixEffect.cs",
+              "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\MatrixEffect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MatrixEffect.cs",
+              "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\MatrixEffect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MatrixEffect.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T18:56:43.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PlayerShooter.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\PlayerShooter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerShooter.cs",
@@ -58,25 +92,23 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerShooter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-16T15:06:53.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-16T15:06:53.931Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UIManager.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\UIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UIManager.cs",
               "ToolTip": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\UIManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UIManager.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAAEMAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAIBJwEMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-16T15:04:00.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-16T15:04:00.295Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ComboPopFX.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\ComboPopFX.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ComboPopFX.cs",
@@ -84,12 +116,11 @@
               "RelativeToolTip": "Assets\\Scripts\\ComboPopFX.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-16T15:03:49.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-16T15:03:49.445Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "FinalScreenUI.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\FinalScreenUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FinalScreenUI.cs",
@@ -97,12 +128,11 @@
               "RelativeToolTip": "Assets\\Scripts\\FinalScreenUI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-16T14:44:29.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-16T14:44:29.368Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "WaveManager.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\WaveManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WaveManager.cs",
@@ -114,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "SceneLoader.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\SceneLoader.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SceneLoader.cs",
@@ -126,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "StartMenu.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\StartMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StartMenu.cs",
@@ -138,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "GameOverUI.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\GameOverUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameOverUI.cs",
@@ -150,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\julij\\Desktop\\GameProjects\\Dataexplorer\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",

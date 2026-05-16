@@ -173,12 +173,12 @@ GameObject:
   - component: {fileID: 198316202}
   - component: {fileID: 198316201}
   m_Layer: 0
-  m_Name: BG_1
+  m_Name: oldBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &198316200
 Transform:
   m_ObjectHideFlags: 0
@@ -663,6 +663,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 198316200}
+  - {fileID: 1092274545}
   m_Father: {fileID: 1687086615}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1002,7 +1003,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1396,6 +1397,68 @@ Transform:
   m_Father: {fileID: 1458675096}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -93}
+--- !u!1 &1092274544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092274545}
+  - component: {fileID: 1092274546}
+  m_Layer: 0
+  m_Name: MatrixBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092274545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092274544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 603864244}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1092274546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092274544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb765daec481614294bc91682c73bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbolTypes:
+  - {fileID: 21300000, guid: dbab4e84aaac04f4bb67103b2355e930, type: 3}
+  - {fileID: 21300000, guid: 921278a09c8a9ef44a75085a9a84b610, type: 3}
+  - {fileID: 21300000, guid: ff5911b2d5decad479834e60bbb80c52, type: 3}
+  - {fileID: 21300000, guid: 1dff9ee3c63ddf249a4ccde320592af9, type: 3}
+  - {fileID: 21300000, guid: f91300f7d3331e84e9a954aca19ac3b7, type: 3}
+  - {fileID: 21300000, guid: 2811d4b20a1d2cc44a169673af6c0247, type: 3}
+  symbolPrefab: {fileID: 1000012145507799571, guid: afb07d9132616a546864f37129d3e232, type: 3}
+  speed: {x: 0.02, y: 0.04}
+  intervals: {x: 0.05, y: 0.2}
+  alphaVariations:
+  - 0.3
+  - 0.5
+  - 0.75
+  transparencyChance: 0.4
+  symbolScale: 10
+  symbolColor: {r: 0.19533637, g: 0.5849056, b: 0.23482667, a: 1}
+  speedUpMod: 1
 --- !u!1 &1172074249
 GameObject:
   m_ObjectHideFlags: 0
