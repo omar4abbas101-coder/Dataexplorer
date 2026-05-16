@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
 
         transform.position = new Vector3(newX, fixedY, transform.position.z);
 
-        if (newX >= rightX || newX <= leftX) { ChangeDirection(); dodgeAura.StopDodge(); }            
+        if (newX >= rightX || newX <= leftX) { ChangeDirection(); if (dodging) dodgeAura.StopDodge(); }            
     }
 
     public void ChangeDirection()

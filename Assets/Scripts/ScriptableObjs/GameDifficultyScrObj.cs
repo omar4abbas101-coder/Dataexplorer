@@ -12,4 +12,5 @@ public class GameDifficultyScrObj : ScriptableObject
     [Header("power-up drop chances")]
     public float hazardChance;
     public float enemyChance;
+    public float dodgingEnemyChance;
 }

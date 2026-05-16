@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using System.Dynamic;
 using UnityEngine;
 
+public enum SpaceShipType
+{
+    BASIC,
+    DODGING
+}
+
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawner attributes")]
     int maxEnemyAmount = 0;
     float enemySpawnIntervals = 100;
     float enemySpeed;
-    public int enemiesLeft = 0;
+    int enemiesLeft = 0;
+    int nextEnemyID = 0;
+    List<SpaceShipType> remainingEnemies = new List<SpaceShipType>();
     List<Enemy> enemies = new List<Enemy>();
 
     [Header("Prefabs")]
     [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject dodgingEnemyPrefab;
 
     float t = 0;
 
@@ -25,7 +34,8 @@ public class EnemySpawner : MonoBehaviour
     public void SetSpawnerParams(WaveScrObj currentWave)
     {
         enemySpawnIntervals = currentWave.enemyIntervals;
-        enemiesLeft = currentWave.enemyAmount;
+        remainingEnemies = currentWave.enemies;
+        enemiesLeft = currentWave.enemies.Count;
         maxEnemyAmount = currentWave.maxEnemyAmount;
         enemySpeed = currentWave.enemySpeed;
     }
@@ -63,8 +73,17 @@ public class EnemySpawner : MonoBehaviour
         // calculating spawning position
         Vector3 spawnPos = new Vector3(randomX, startingY, 0);
 
+        // CHOOSING ENEMY TYPE
+        // default is basic enemy
+        GameObject enemyToSpawn = enemyPrefab;
+        switch (remainingEnemies[nextEnemyID])
+        {
+            case SpaceShipType.DODGING: { enemyToSpawn = dodgingEnemyPrefab; break; }
+        }
+        nextEnemyID++;
+
         // SPAWNING THE ENEMY
-        Enemy newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity).GetComponent<Enemy>();
+        Enemy newEnemy = Instantiate(enemyToSpawn, spawnPos, Quaternion.identity).GetComponent<Enemy>();
         // setting the speed
         newEnemy.moveSpeed = enemySpeed;
         enemies.Add(newEnemy);

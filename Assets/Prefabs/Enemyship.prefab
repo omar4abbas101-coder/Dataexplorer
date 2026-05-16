@@ -151,7 +151,7 @@ MonoBehaviour:
   blinkingInterval: 0.3
   hp: 1
   scoreValue: 50
-  dodging: 1
+  dodging: 0
 --- !u!58 &3114987852912080729
 CircleCollider2D:
   m_ObjectHideFlags: 0
