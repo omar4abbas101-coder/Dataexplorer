@@ -15,8 +15,6 @@ MonoBehaviour:
   color: {r: 0.5442506, g: 0.9245283, b: 0.62664413, a: 1}
   waves:
   - {fileID: 11400000, guid: a7d7eff7aac02dd4ca7935fea9fd7eb1, type: 2}
-  - {fileID: 11400000, guid: 86d45912cf891a040b1e9b5888a22654, type: 2}
-  - {fileID: 11400000, guid: ab46bdd63d994eb46872044094f8c4ad, type: 2}
-  - {fileID: 11400000, guid: 45969a747dca89b40aa5d3f2dd0b2c48, type: 2}
   hazardChance: 0.05
   enemyChance: 0.1
+  dodgingEnemyChance: 0

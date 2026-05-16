@@ -29,6 +29,9 @@ public class SceneLoader : MonoBehaviour
 
     private void Update()
     {
+        // escaping the game when player presses escape
+        if (Input.GetKey(KeyCode.Escape)) QuitGame();
+
         Loading();
     }
 
@@ -101,4 +104,13 @@ public class SceneLoader : MonoBehaviour
         // loading new scene
         SceneManager.LoadScene(sceneName);
     }
+
+    // QUITTING GAME
+    // ===============
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
+
 }
