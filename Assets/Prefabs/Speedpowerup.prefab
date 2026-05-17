@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1554448483055125084}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Speedpowerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3791568291313988649}
   - component: {fileID: 5900205201075442365}
   - component: {fileID: 6206898471120424396}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: powerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 5120618717016333529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.11715, y: 0.12496, z: 0.12496}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1554448483055125084}
@@ -108,8 +108,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.2048912, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: cac80ef2b12f0b74daa558657206eb26, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -132,9 +132,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.260701, y: -0.263947}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 4.6490436
 --- !u!114 &5900205201075442365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f053c0296c6c7dd4f8dd9c7a4d863cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedIncrease: 10
+  speedIncrease: 3
   duration: 5
 --- !u!114 &6206898471120424396
 MonoBehaviour:

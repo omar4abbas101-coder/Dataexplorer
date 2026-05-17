@@ -15,8 +15,9 @@ public class MatrixEffect : MonoBehaviour
     [SerializeField] float transparencyChance;
     [SerializeField] float symbolScale;
     [SerializeField] Color symbolColor;
-    
-    [HideInInspector] public float speedUpMod = 1; // for in between wave speed-ups
+
+    [HideInInspector] public float speedUpMod = 1f;
+
     float nextInterval = 0;
     float t = 0;
 
@@ -27,38 +28,63 @@ public class MatrixEffect : MonoBehaviour
 
     void SpawnTimer()
     {
-        // timer
         t += Time.deltaTime * speedUpMod;
 
-        if (t > nextInterval) SpawnSymbol();
+        if (t > nextInterval)
+        {
+            SpawnSymbol();
+        }
     }
 
     void SpawnSymbol()
     {
-        // DECINING ON NEXT INTERVAL
-        // ====================================
         nextInterval = Random.Range(intervals.x, intervals.y);
         t = 0;
 
-        // PREPARING VARIABLES FOR SPAWNING
-        // ====================================
-        // speed
-        float symbolSpeed = Random.Range(speed.x, speed.y);
-        // position
-        float symbolX = Random.Range(GameManager.Instance.GetScreenLeft(), GameManager.Instance.GetScreenRight());
+        // THIS makes the letters fall faster too
+        float symbolSpeed = Random.Range(speed.x, speed.y) * speedUpMod;
+
+        float symbolX = Random.Range(
+            GameManager.Instance.GetScreenLeft(),
+            GameManager.Instance.GetScreenRight()
+        );
+
         float symbolY = GameManager.Instance.GetScreenTop() + 1f;
+
         Vector2 symbolPos = new Vector2(symbolX, symbolY);
 
-        // transparency
-        float symbolAlpha = (Random.value > transparencyChance) ? 1f : alphaVariations[Random.Range(0, alphaVariations.Length)];
-        // color
-        symbolColor = new Color(symbolColor.r, symbolColor.g, symbolColor.b, symbolAlpha);
-        // sprite
+        float symbolAlpha = (Random.value > transparencyChance)
+            ? 1f
+            : alphaVariations[Random.Range(0, alphaVariations.Length)];
+
+        Color finalColor = new Color(
+            symbolColor.r,
+            symbolColor.g,
+            symbolColor.b,
+            symbolAlpha
+        );
+
         Sprite symbolSprite = symbolTypes[Random.Range(0, symbolTypes.Count)];
 
-        // SPAWNING THE SYMBOL
-        // ===============================
-        GameObject newSymbol = Instantiate(symbolPrefab, symbolPos, Quaternion.identity);
-        newSymbol.GetComponent<MatrixSymbol>().InitSymbol(symbolSprite, symbolColor, symbolScale, symbolSpeed);
+        GameObject newSymbol = Instantiate(
+            symbolPrefab,
+            symbolPos,
+            Quaternion.identity
+        );
+
+        MatrixSymbol matrixSymbol = newSymbol.GetComponent<MatrixSymbol>();
+
+        if (matrixSymbol == null)
+        {
+            Debug.LogError("MatrixSymbol component missing on symbol prefab!");
+            return;
+        }
+
+        matrixSymbol.InitSymbol(
+            symbolSprite,
+            finalColor,
+            symbolScale,
+            symbolSpeed
+        );
     }
 }

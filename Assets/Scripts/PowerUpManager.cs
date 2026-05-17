@@ -20,8 +20,8 @@ public class PowerUpManager : MonoBehaviour
         // deciding on spawn chance
         switch (enemyType)
         {
-            case EnemyType.ENEMY: { spawnChance = GameManager.Instance.difficulty.hazardChance; break; }
-            case EnemyType.HAZARD: { spawnChance = GameManager.Instance.difficulty.enemyChance; break; }
+            case EnemyType.ENEMY: { spawnChance = GameManager.Instance.difficulty.enemyChance; break; }
+            case EnemyType.HAZARD: { spawnChance = GameManager.Instance.difficulty.hazardChance; break; }
         }
 
         // randomly deciding if power up is spawned based on chance
