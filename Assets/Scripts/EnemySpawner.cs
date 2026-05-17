@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
         // adding reference to this spawner to game manager
         GameManager.Instance.enemySpawner = this;
     }
+
     public void SetSpawnerParams(WaveScrObj currentWave)
     {
         enemySpawnIntervals = currentWave.enemyIntervals;
@@ -38,6 +39,11 @@ public class EnemySpawner : MonoBehaviour
         enemiesLeft = currentWave.enemies.Count;
         maxEnemyAmount = currentWave.maxEnemyAmount;
         enemySpeed = currentWave.enemySpeed;
+
+        // reset values for new wave
+        nextEnemyID = 0;
+        enemies.Clear();
+        t = 0;
     }
 
     private void Update()
@@ -47,59 +53,74 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnCheck()
     {
-        // checking if more enemies are left in this wave and if max is reached
-        if (enemies.Count >= maxEnemyAmount || enemiesLeft - enemies.Count <= 0 || GameManager.Instance.pause) return;
+        // stop if paused
+        if (GameManager.Instance.pause)
+            return;
 
-        t += Time.deltaTime; // progressing timer
+        // stop if max enemies are already alive
+        if (enemies.Count >= maxEnemyAmount)
+            return;
+
+        // stop if no more enemies left to spawn
+        if (nextEnemyID >= remainingEnemies.Count)
+            return;
+
+        t += Time.deltaTime;
 
         if (t >= enemySpawnIntervals)
         {
-            t = 0; // resetting timer
-
+            t = 0;
             SpawnEnemy();
         }
     }
 
     void SpawnEnemy()
     {
+        // extra safety check
+        if (nextEnemyID >= remainingEnemies.Count)
+            return;
+
         // SETTING VARIABLES
-        // calculating starting X
         float borderOffset = enemyPrefab.GetComponent<Enemy>().movementMargins;
         float minX = GameManager.Instance.GetScreenLeft() + borderOffset;
         float maxX = GameManager.Instance.GetScreenRight() - borderOffset;
         float randomX = Random.Range(minX, maxX);
-        // calculating starting Y
+
         float startingY = GameManager.Instance.GetScreenTop() + 1f;
-        // calculating spawning position
+
         Vector3 spawnPos = new Vector3(randomX, startingY, 0);
 
         // CHOOSING ENEMY TYPE
-        // default is basic enemy
         GameObject enemyToSpawn = enemyPrefab;
+
         switch (remainingEnemies[nextEnemyID])
         {
-            case SpaceShipType.DODGING: { enemyToSpawn = dodgingEnemyPrefab; break; }
+            case SpaceShipType.DODGING:
+                enemyToSpawn = dodgingEnemyPrefab;
+                break;
         }
+
         nextEnemyID++;
 
-        // SPAWNING THE ENEMY
+        // SPAWNING
         Enemy newEnemy = Instantiate(enemyToSpawn, spawnPos, Quaternion.identity).GetComponent<Enemy>();
-        // setting the speed
+
         newEnemy.moveSpeed = enemySpeed;
         enemies.Add(newEnemy);
     }
 
     public void EnemyDead(Enemy enemy)
     {
-        // removing enemy from list
         enemies.Remove(enemy);
 
-        // decreasing number of enemies left for current wave
         enemiesLeft--;
 
         Debug.Log("Enemy Spawner: enemies left: " + enemiesLeft);
 
-        // checking if this was the last enemy
-        if (enemiesLeft == 0) { GameManager.Instance.waveManager.enemiesDone = true; Debug.Log("Enemy Spawner: no more enemies left"); }
+        if (enemiesLeft == 0)
+        {
+            GameManager.Instance.waveManager.enemiesDone = true;
+            Debug.Log("Enemy Spawner: no more enemies left");
+        }
     }
 }

@@ -15,9 +15,9 @@ MonoBehaviour:
   asteroidTime: 0
   asteroidIntervals: 0
   asteroidSpeed: 0
-  enemyAmount: 8
+  enemies: 00000000010000000000000001000000000000000000000001000000000000000100000000000000
   enemyIntervals: 3
-  maxEnemyAmount: 3
+  maxEnemyAmount: 4
   enemySpeed: 3
   laserAmount: 14
   laserMinInterval: 1
@@ -25,4 +25,4 @@ MonoBehaviour:
   laserMinSize: 1
   laserMaxSize: 6
   laserRotationChance: 0.2
-  laserSpeed: 2
+  laserSpeed: 4

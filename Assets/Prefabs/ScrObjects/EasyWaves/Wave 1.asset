@@ -17,7 +17,7 @@ MonoBehaviour:
   asteroidSpeed: 4
   enemies: 000000000000000000000000
   enemyIntervals: 0
-  maxEnemyAmount: 3
+  maxEnemyAmount: 4
   enemySpeed: 3
   laserAmount: 0
   laserMinInterval: 0
