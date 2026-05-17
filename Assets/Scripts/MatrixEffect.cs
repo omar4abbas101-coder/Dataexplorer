@@ -16,7 +16,7 @@ public class MatrixEffect : MonoBehaviour
     [SerializeField] float symbolScale;
     [SerializeField] Color symbolColor;
     
-    public float speedUpMod = 1; // for in between wave speed-ups
+    [HideInInspector] public float speedUpMod = 1; // for in between wave speed-ups
     float nextInterval = 0;
     float t = 0;
 
