@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickupItem : MonoBehaviour
 {
     private AudioSource audioSource;
+    public int pickupscore;
 
     void Awake()
     {
@@ -15,7 +16,7 @@ public class PickupItem : MonoBehaviour
             return;
 
         // Increase score
-        GameManager.Instance.AddScore(1);
+        GameManager.Instance.AddScore( pickupscore);
 
         // Play sound safely
         if (audioSource != null && audioSource.clip != null)

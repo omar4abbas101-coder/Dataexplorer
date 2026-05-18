@@ -62,7 +62,17 @@ public class Hazard : MonoBehaviour
         if (GameManager.Instance != null)
             GameManager.Instance.PlayerHit(1);
 
-        GameManager.Instance.powerUpManager.SpawnPowerUpCheck(EnemyType.HAZARD, transform.position);
+      
         Destroy(gameObject);
     }
+
+
+
+      public void HazardDestruction()
+ {
+
+ GameManager.Instance.powerUpManager.SpawnPowerUpCheck(EnemyType.HAZARD, transform.position);
+  Destroy(gameObject);
+
+  }
 }

@@ -941,6 +941,7 @@ MonoBehaviour:
   pickupPrefab: {fileID: 266357306420487622, guid: 64696ebc6c8fb524bbcb3cdbfbd29e5f, type: 3}
   spawnMin: {x: -8, y: -4}
   spawnMax: {x: 8, y: 4}
+  interval: 8
 --- !u!114 &819660280 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1046186785614928235, guid: 9618c1be3f0d7e14189ddf4511450e63, type: 3}
@@ -1050,7 +1051,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c169c2187bb960d4cbca244f74c8ad8b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

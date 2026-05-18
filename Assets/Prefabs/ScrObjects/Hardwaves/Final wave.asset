@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c828c4ee0ea6d5942b7b259659cd37c6, type: 3}
-  m_Name: Wave 4
+  m_Name: Final wave
   m_EditorClassIdentifier: 
   asteroidTime: 35
   asteroidIntervals: 2

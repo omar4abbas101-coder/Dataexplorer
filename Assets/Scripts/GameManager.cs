@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
     PlayerPrefs.SetInt("FinalScore", score);
 
     Time.timeScale = 1f;
-    SceneManager.LoadScene(gameOverSceneName);
+    SceneLoader.instance.LoadScene(gameOverSceneName);
 }
 
     public void GameFinished()
