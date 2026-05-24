@@ -1465,7 +1465,7 @@ MonoBehaviour:
   - 0.5
   - 0.75
   transparencyChance: 0.4
-  symbolScale: 2.5
+  symbolScale: 2
   symbolColor: {r: 0.19533637, g: 0.5849056, b: 0.23482667, a: 1}
   speedUpMod: 1
 --- !u!1 &1172074249
