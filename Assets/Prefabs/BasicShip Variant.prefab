@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2415257129134382260, guid: 502672d557632494f9321c10ac45d984, type: 3}
       propertyPath: m_Name
-      value: BasicShip
+      value: BasicShip Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8315275808618926877, guid: 502672d557632494f9321c10ac45d984, type: 3}
       propertyPath: m_RootOrder
@@ -54,6 +54,10 @@ PrefabInstance:
     - target: {fileID: 8315275808618926877, guid: 502672d557632494f9321c10ac45d984, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068080706958613870, guid: 502672d557632494f9321c10ac45d984, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 502672d557632494f9321c10ac45d984, type: 3}
