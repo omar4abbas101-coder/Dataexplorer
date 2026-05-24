@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dodgePrefab: {fileID: 6723560472104859727, guid: 7ab410462289e7b4389bd2d05fe2df96, type: 3}
+  deathSound: {fileID: 8300000, guid: 06a41c9b78f70b74780246ce74e4fc60, type: 3}
+  deathSoundVolume: 100
   sprite: {fileID: 2438553701039907815}
   moveSpeed: 3
   movementMargins: 2

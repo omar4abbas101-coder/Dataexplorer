@@ -3,7 +3,18 @@ guid: 4b6924f1c334a65438c544f1f64454da
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - settings: {instanceID: 0}
+  - difficulty: {instanceID: 0}
+  - playerDeathEffect: {fileID: 7731960150196917733, guid: bab848b62b7102d45941e8b99ce48157, type: 3}
+  - playerTransform: {fileID: 2195455789948979579, guid: 106a6aafdfab262428f48268e3505856, type: 3}
+  - uiManager: {instanceID: 0}
+  - enemySpawner: {instanceID: 0}
+  - hazardSpawner: {instanceID: 0}
+  - laserSpawner: {instanceID: 0}
+  - powerUpManager: {instanceID: 0}
+  - waveManager: {instanceID: 0}
+  - currentWave: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
 {
     [Header("refs")]
     [SerializeField] GameObject dodgePrefab;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] float deathSoundVolume = 1f;
     BulletDodge dodgeAura;
     [SerializeField] SpriteRenderer sprite;
 
@@ -23,7 +25,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] float appearingTime = 0;
     [SerializeField] float blinkingInterval;
 
-
     [Header("attributes")]
     public int hp = 2;
     public int scoreValue = 50;
@@ -40,11 +41,13 @@ public class Enemy : MonoBehaviour
         leftX = GameManager.Instance.GetScreenLeft() + movementMargins;
         rightX = GameManager.Instance.GetScreenRight() - movementMargins;
 
-        // setting fixedY to spaceship's position if it already is placed in the level when start. Otherwise fixedY is set in the spawner
-        if (transform.position.y < GameManager.Instance.GetScreenTop()) fixedY = transform.position.y;
-        else StartCoroutine(AppearFromTop());
+        // setting fixedY
+        if (transform.position.y < GameManager.Instance.GetScreenTop())
+            fixedY = transform.position.y;
+        else
+            StartCoroutine(AppearFromTop());
 
-        // spawning the dodge aura if the ship is dodging type
+        // spawning dodge aura
         if (dodging)
         {
             BulletDodge newDodge = Instantiate(dodgePrefab, transform.position, Quaternion.identity).GetComponent<BulletDodge>();
@@ -57,11 +60,9 @@ public class Enemy : MonoBehaviour
     {
         appearing = true;
 
-        // calculating future fixedY
         float randomYoffset = Random.Range(-shipToShipOffset, shipToShipOffset);
         fixedY = GameManager.Instance.GetScreenTop() - screenToShipOffset + randomYoffset;
 
-        // setting variables for the move
         float t = 0;
         float blinkingT = 0;
         Vector3 startPos = transform.position;
@@ -69,28 +70,26 @@ public class Enemy : MonoBehaviour
 
         while (t < appearingTime)
         {
-            // calculating t (entering animation progress for current frame)
-            t += Time.deltaTime; // progressing t
-            float clampedT = t / appearingTime; // clamping so t is from '0' to '1'
-            float coolT = 1f - (1f - clampedT) * (1f - clampedT); // applying math to make the movement 'fast > slow'
+            t += Time.deltaTime;
+            float clampedT = t / appearingTime;
+            float coolT = 1f - (1f - clampedT) * (1f - clampedT);
 
-            transform.position = Vector3.Lerp(startPos, targetPos, coolT); // moving the spaceship
+            transform.position = Vector3.Lerp(startPos, targetPos, coolT);
 
-            // spaceship blinking
             blinkingT += Time.deltaTime;
-            if (blinkingT > blinkingInterval) { InvisibilityBlink(); }
+            if (blinkingT > blinkingInterval)
+            {
+                InvisibilityBlink();
+                blinkingT = 0f;
+            }
 
             yield return null;
         }
 
-        // appearence complete, spaceship can start moving and shooting
         appearing = false;
         InvisibilityBlink();
     }
 
-    /// <summary>
-    /// Making the spaceship blink, signifying temporary invisibility
-    /// </summary>
     void InvisibilityBlink()
     {
         float alpha = (sprite.color.a != 1 || appearing == false) ? 1f : 0.3f;
@@ -104,7 +103,6 @@ public class Enemy : MonoBehaviour
 
     void MoveLeftRight()
     {
-        // do not move left and right when entering the screen
         if (appearing) return;
 
         float newX = transform.position.x + moveDirection * moveSpeed * Time.deltaTime;
@@ -112,7 +110,13 @@ public class Enemy : MonoBehaviour
 
         transform.position = new Vector3(newX, fixedY, transform.position.z);
 
-        if (newX >= rightX || newX <= leftX) { ChangeDirection(); if (dodging) dodgeAura.StopDodge(); }            
+        if (newX >= rightX || newX <= leftX)
+        {
+            ChangeDirection();
+
+            if (dodging)
+                dodgeAura.StopDodge();
+        }
     }
 
     public void ChangeDirection()
@@ -122,10 +126,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // invincible when appearing
         if (appearing) return;
 
         hp -= damage;
+
         if (CameraShake.Instance != null)
             CameraShake.Instance.Shake();
 
@@ -139,12 +143,19 @@ public class Enemy : MonoBehaviour
     {
         if (appearing) return;
 
-        // adding score
+        // play death sound
+        if (deathSound != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
+        }
+
+        // score
         GameManager.Instance.AddScore(scoreValue);
 
-        // removing enemy object from game
+        // enemy cleanup
         GameManager.Instance.enemySpawner.EnemyDead(this);
         GameManager.Instance.powerUpManager.SpawnPowerUpCheck(EnemyType.ENEMY, transform.position);
+
         Destroy(gameObject);
     }
 }

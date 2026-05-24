@@ -343,6 +343,8 @@ MonoBehaviour:
   gameOverSceneName: GameOver
   invincibleSecondsAfterHit: 4
   pause: 0
+  playerDeathEffect: {fileID: 0}
+  playerTransform: {fileID: 0}
   uiManager: {fileID: 0}
   enemySpawner: {fileID: 0}
   hazardSpawner: {fileID: 0}
@@ -413,6 +415,18 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4339253177941178252, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95529324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339253177941178252, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95529324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339253177941178252, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95529324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339253177941178252, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -464,6 +478,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hard
       objectReference: {fileID: 0}
+    - target: {fileID: 4339253178112087282, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
+    - target: {fileID: 4339253178112087282, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 50300564428768054, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
 --- !u!224 &813772908 stripped
@@ -854,6 +876,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal
       objectReference: {fileID: 0}
+    - target: {fileID: 4339253178112087282, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
+    - target: {fileID: 4339253178112087282, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 50300564428768054, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
 --- !u!224 &1785572406 stripped
@@ -1057,6 +1087,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Easy
       objectReference: {fileID: 0}
+    - target: {fileID: 4339253178112087282, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
+    - target: {fileID: 4339253178112087282, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 50300564428768054, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30e139d007aaa248b6d60e9d3bf4ec2, type: 3}
 --- !u!1001 &6014592641678361319
@@ -1066,9 +1104,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6014592641483776224, guid: e41b2b87ff6c2ff47953bffdeffdc0fb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6014592641483776225, guid: e41b2b87ff6c2ff47953bffdeffdc0fb, type: 3}
       propertyPath: m_Name
       value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014592641483776225, guid: e41b2b87ff6c2ff47953bffdeffdc0fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6014592641483776239, guid: e41b2b87ff6c2ff47953bffdeffdc0fb, type: 3}
       propertyPath: m_RootOrder
