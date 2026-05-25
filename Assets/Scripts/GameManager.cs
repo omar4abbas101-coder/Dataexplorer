@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,19 +14,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] string gameOverSceneName = "GameOver";
     [SerializeField] float invincibleSecondsAfterHit = 1f;
     [HideInInspector] public bool pause = true;
+    [SerializeField] GameObject playerDeathEffect;
+    [SerializeField] Transform playerTransform;
 
     [Header("UI")]
     [SerializeField] UIManager uiManager;
-
-    [Header("Level")]
-    Vector3 bottomLeft;
-    Vector3 topRight;
 
     [Header("Spawners")]
     public EnemySpawner enemySpawner;
     public SpawnHazard hazardSpawner;
     public LaserSpawner laserSpawner;
-    public PowerUpManager powerUpManager; 
+    public PowerUpManager powerUpManager;
 
     [Header("Waves")]
     public WaveManager waveManager;
@@ -56,9 +53,6 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
 
-        DefineScreenCoords();
-
-        // setting the difficutly
         difficulty = settings.difficulty;
         Debug.Log("GameManager: Difficulty is set to: " + difficulty.name);
     }
@@ -71,35 +65,15 @@ public class GameManager : MonoBehaviour
         isInvincible = false;
 
         RefreshUI();
- 
-        // Passing wave list to wave manager
-        waveManager.waves = difficulty.waves;
 
-        // Launching first wave
+        waveManager.waves = difficulty.waves;
         StartCoroutine(waveManager.NextWaveTransition());
     }
-    
-    // ==============================
-    // SCREEN POINTS
-    // ==============================
 
-    // getting screen border points in world coordinates
-    void DefineScreenCoords()
-    {
-        // getting screen border coords
-        Camera camera = Camera.main;
-
-        bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
-        topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
-    }
-
-    // GETTING SCREEN POINTS
-    public float GetScreenTop() => topRight.y;
-    public float GetScreenBottom() => bottomLeft.y;
-    public float GetScreenLeft() => bottomLeft.x;
-    public float GetScreenRight() => topRight.x;
-
-    // ==============================
+    public float GetScreenTop() => Level.instance.GetScreenTop();
+    public float GetScreenBottom() => Level.instance.GetScreenBottom();
+    public float GetScreenLeft() => Level.instance.GetScreenLeft();
+    public float GetScreenRight() => Level.instance.GetScreenRight();
 
     public void AddScore(int amount)
     {
@@ -121,11 +95,27 @@ public class GameManager : MonoBehaviour
 
         if (hp <= 0)
         {
-            GameOver();
+            if (playerDeathEffect != null && playerTransform != null)
+            {
+                Instantiate(playerDeathEffect, playerTransform.position, Quaternion.identity);
+            }
+
+            if (playerTransform != null)
+            {
+                playerTransform.gameObject.SetActive(false);
+            }
+
+            StartCoroutine(DelayedGameOver());
             return;
         }
 
         SetInvincible(invincibleSecondsAfterHit);
+    }
+
+    IEnumerator DelayedGameOver()
+    {
+        yield return new WaitForSeconds(1f);
+        GameOver();
     }
 
     public void TakeDamage(int damage)
@@ -150,35 +140,29 @@ public class GameManager : MonoBehaviour
     }
 
     void GameOver()
-{
-    if (isGameOver) return;
+    {
+        if (isGameOver) return;
 
-    isGameOver = true;
+        isGameOver = true;
 
-    // Save score
-    PlayerPrefs.SetInt("FinalScore", score);
+        PlayerPrefs.SetInt("FinalScore", score);
 
-    Time.timeScale = 1f;
-    SceneManager.LoadScene(gameOverSceneName);
-}
+        Time.timeScale = 1f;
+        SceneLoader.instance.LoadScene(gameOverSceneName);
+    }
 
     public void GameFinished()
     {
         StartCoroutine(GoToFinalScene());
 
-        // temporary solution
+        PlayerPrefs.SetInt("FinalScore", score);
         waveManager.waveText.gameObject.SetActive(true);
         waveManager.waveText.text = "Congratz! you won!";
     }
 
-    /// <summary>
-    /// Transition to final cutscene
-    /// </summary>
-    /// <returns></returns>
     IEnumerator GoToFinalScene()
     {
         yield return new WaitForSeconds(pauseBeforeFinish);
-
         SceneLoader.instance.LoadScene("Final");
     }
 

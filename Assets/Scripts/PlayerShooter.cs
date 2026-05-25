@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooter : MonoBehaviour
 {
@@ -17,16 +18,32 @@ public class PlayerShooter : MonoBehaviour
     public AudioClip shootSfx;
     AudioSource audioSource;
 
+    [Header("Overheat")]
+    float currentOverheat;
+    [HideInInspector] public bool onCoolDown;
+    float currentCooldownSpeed = 0;
+    public float slowdownCoof;
+    [SerializeField] float cooldownSpeed;
+    [SerializeField] float slowCooldownSpeed;
+    [SerializeField] float overheatPerShot;
+    [SerializeField] Image overheatBar;
+    [SerializeField] GameObject overheatObj;
+    [SerializeField] GameObject overheatIndicator;
+    [SerializeField] Color barColor;
+    [SerializeField] Color barOverheatColor;
+
     float fireTimer;
 
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         fireCooldown = baseFireCooldown; // start normal
+        Overheat(false);
     }
 
     void Update()
     {
+        // shooting
         fireTimer -= Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Space) && fireTimer <= 0f)
@@ -34,10 +51,16 @@ public class PlayerShooter : MonoBehaviour
             Shoot();
             fireTimer = fireCooldown;
         }
+
+        // cooldown
+        PassiveCooldown();
     }
 
     void Shoot()
     {
+        // doesn't shoot while overheated
+        if (onCoolDown) return;
+
         // shooting bullet(s)
         for (int i = 0; i < bulletCount; i++)
         {
@@ -50,5 +73,36 @@ public class PlayerShooter : MonoBehaviour
 
         // playing shooting soundeffect
         if (shootSfx != null && audioSource != null) audioSource.PlayOneShot(shootSfx);
+
+        // add overheat
+        currentOverheat += overheatPerShot;
+        if (currentOverheat > 1) Overheat(true);
+    }
+
+    void Overheat(bool isOverheat)
+    {
+        onCoolDown = isOverheat;
+        currentOverheat = (isOverheat) ? 1 : 0;
+        currentCooldownSpeed = (isOverheat) ? slowCooldownSpeed : cooldownSpeed;
+
+        // slowing down the ship
+        if (onCoolDown) GetComponent<PlayerController2D>().ModifySpeed(slowdownCoof);
+        else GetComponent<PlayerController2D>().ModifySpeed();
+
+            // changing bar colors
+            overheatBar.color = (isOverheat) ? barOverheatColor : barColor;
+    }
+
+    void PassiveCooldown()
+    {
+        if (currentOverheat > 0) currentOverheat -= currentCooldownSpeed * Time.deltaTime;
+        else Overheat(false);
+
+        // updating bar visuals
+        overheatObj.SetActive(currentOverheat > 0);
+        overheatBar.fillAmount = currentOverheat;
+
+        // indicator
+        overheatIndicator.SetActive(currentOverheat > 0.7f || onCoolDown);
     }
 }

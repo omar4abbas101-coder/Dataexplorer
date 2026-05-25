@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -7,6 +9,13 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI comboText;
+
+    [Header("Mute Button")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] Image muteButton;
+    [SerializeField] Sprite mutedSprite;
+    [SerializeField] Sprite unmutedSprite;
 
     void Awake()
     {
@@ -52,5 +61,14 @@ public class UIManager : MonoBehaviour
     {
         if (comboText == null) return;
         comboText.text = "";
+    }
+
+    public void MuteButton()
+    {
+        // muting the sound and music
+        musicSource.mute = !musicSource.mute;
+
+        // setting correct visuals of the mute button
+        muteButton.sprite = (musicSource.mute) ? mutedSprite : unmutedSprite;
     }
 }

@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
         if (CameraShake.Instance != null)
             CameraShake.Instance.Shake();
 
-        Destroy(hazard.gameObject);
+        hazard.HazardDestruction();
         Destroy(gameObject);
     }
 }

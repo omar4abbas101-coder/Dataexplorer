@@ -15,7 +15,7 @@ MonoBehaviour:
   asteroidTime: 25
   asteroidIntervals: 1.5
   asteroidSpeed: 6
-  enemies: 
+  enemies: 00000000000000000100000001000000
   enemyIntervals: 0
   maxEnemyAmount: 0
   enemySpeed: 0

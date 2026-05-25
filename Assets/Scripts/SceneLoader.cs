@@ -29,6 +29,9 @@ public class SceneLoader : MonoBehaviour
 
     private void Update()
     {
+        // escaping the game when player presses escape
+        if (Input.GetKey(KeyCode.Escape)) QuitGame();
+
         Loading();
     }
 
@@ -88,7 +91,7 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadNewScene(string sceneName, float loadingTime)
     {
         // transition fog effect
-        yield return StartCoroutine(ScreenFade(true));
+         yield return StartCoroutine(ScreenFade(true));
 
         // enabling "fake loading" if loading time is > 0
         if (loadingTime > 0f && fakeLoading)
@@ -99,6 +102,15 @@ public class SceneLoader : MonoBehaviour
         }
 
         // loading new scene
-        SceneManager.LoadScene(sceneName);
+         SceneManager.LoadScene(sceneName);
     }
+
+    // QUITTING GAME
+    // ===============
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
+
 }

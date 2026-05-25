@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 1221118644}
   - component: {fileID: 1221118645}
   - component: {fileID: 4743262373788142546}
+  - component: {fileID: 1712118073138812390}
   m_Layer: 6
   m_Name: playerObj
   m_TagString: Player
@@ -178,8 +179,8 @@ SpriteRenderer:
   m_SortingLayerID: 437570051
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 44cf12cc10c9d1343abde289a1d9a1c5, type: 3}
-  m_Color: {r: 0.01176471, g: 0.90588236, b: 0.04547566, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7a124cb201903c848bd7f425a2db6222, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -241,9 +242,16 @@ MonoBehaviour:
   firePoint: {fileID: 231248872}
   bulletCount: 1
   bulletAngle: 30
-  baseFireCooldown: 0.2
+  baseFireCooldown: 0.3
   fireCooldown: 0.25
   shootSfx: {fileID: 8300000, guid: e8b8fb917da01a144ac046f2262e1771, type: 3}
+  cooldownSpeed: 2
+  slowCooldownSpeed: 1
+  overheatPerShot: 0.2
+  overheatBar: {fileID: 0}
+  overheatIndicator: {fileID: 0}
+  barColor: {r: 0.9254902, g: 0.6095252, b: 0.27450988, a: 1}
+  barOverheatColor: {r: 0.9339623, g: 0.09163401, b: 0.09163401, a: 1}
 --- !u!82 &1221118639
 AudioSource:
   m_ObjectHideFlags: 0
@@ -416,3 +424,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &1712118073138812390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071718374550250102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f035412c604c5fc40aa4945e8539be72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffectPrefab: {fileID: 7731960150196917733, guid: bab848b62b7102d45941e8b99ce48157, type: 3}
+  deathSound: {fileID: 8300000, guid: 71a1cefb00a051a429376f505a68c83d, type: 3}
+  deathDelay: 1
+  transitionStartDelay: 0.5

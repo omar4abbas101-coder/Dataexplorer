@@ -6,7 +6,8 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerController2D : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 6f;
+    [SerializeField] float baseMoveSpeed = 6f;
+    public float moveSpeed;
     Rigidbody2D rb;
     Vector2 input;
 
@@ -24,6 +25,9 @@ public class PlayerController2D : MonoBehaviour
     private void Start()
     {
         SetFirepointPositions();
+
+        // setting the speed
+        moveSpeed = baseMoveSpeed;
     }
 
     void SetFirepointPositions()
@@ -69,6 +73,11 @@ public class PlayerController2D : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
+    }
+
+    public void ModifySpeed(float speedCoof = 1f)
+    {
+        moveSpeed = baseMoveSpeed * speedCoof;
     }
 
     void Movement()
