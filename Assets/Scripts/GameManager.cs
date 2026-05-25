@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,10 +19,6 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] UIManager uiManager;
-
-    [Header("Level")]
-    Vector3 bottomLeft;
-    Vector3 topRight;
 
     [Header("Spawners")]
     public EnemySpawner enemySpawner;
@@ -58,8 +53,6 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
 
-        DefineScreenCoords();
-
         difficulty = settings.difficulty;
         Debug.Log("GameManager: Difficulty is set to: " + difficulty.name);
     }
@@ -77,18 +70,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(waveManager.NextWaveTransition());
     }
 
-    void DefineScreenCoords()
-    {
-        Camera camera = Camera.main;
-
-        bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
-        topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
-    }
-
-    public float GetScreenTop() => topRight.y;
-    public float GetScreenBottom() => bottomLeft.y;
-    public float GetScreenLeft() => bottomLeft.x;
-    public float GetScreenRight() => topRight.x;
+    public float GetScreenTop() => Level.instance.GetScreenTop();
+    public float GetScreenBottom() => Level.instance.GetScreenBottom();
+    public float GetScreenLeft() => Level.instance.GetScreenLeft();
+    public float GetScreenRight() => Level.instance.GetScreenRight();
 
     public void AddScore(int amount)
     {
@@ -170,6 +155,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(GoToFinalScene());
 
+        PlayerPrefs.SetInt("FinalScore", score);
         waveManager.waveText.gameObject.SetActive(true);
         waveManager.waveText.text = "Congratz! you won!";
     }
