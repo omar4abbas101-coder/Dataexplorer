@@ -21,7 +21,7 @@ public class MatrixSymbol : MonoBehaviour
         transform.Translate(0, -speed, 0);
 
         // destroying the symbol once it reaches off screen
-        if (sprite.bounds.max.y < GameManager.Instance.GetScreenBottom())
+        if (sprite.bounds.max.y < Level.instance.GetScreenBottom())
         {
             Destroy(this.gameObject);
         }

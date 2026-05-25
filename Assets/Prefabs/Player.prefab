@@ -245,6 +245,13 @@ MonoBehaviour:
   baseFireCooldown: 0.3
   fireCooldown: 0.25
   shootSfx: {fileID: 8300000, guid: e8b8fb917da01a144ac046f2262e1771, type: 3}
+  cooldownSpeed: 2
+  slowCooldownSpeed: 1
+  overheatPerShot: 0.2
+  overheatBar: {fileID: 0}
+  overheatIndicator: {fileID: 0}
+  barColor: {r: 0.9254902, g: 0.6095252, b: 0.27450988, a: 1}
+  barOverheatColor: {r: 0.9339623, g: 0.09163401, b: 0.09163401, a: 1}
 --- !u!82 &1221118639
 AudioSource:
   m_ObjectHideFlags: 0
