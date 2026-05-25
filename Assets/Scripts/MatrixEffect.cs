@@ -45,11 +45,11 @@ public class MatrixEffect : MonoBehaviour
         float symbolSpeed = Random.Range(speed.x, speed.y) * speedUpMod;
 
         float symbolX = Random.Range(
-            GameManager.Instance.GetScreenLeft(),
-            GameManager.Instance.GetScreenRight()
+            Level.instance.GetScreenLeft(),
+            Level.instance.GetScreenRight()
         );
 
-        float symbolY = GameManager.Instance.GetScreenTop() + 1f;
+        float symbolY = Level.instance.GetScreenTop() + 1f;
 
         Vector2 symbolPos = new Vector2(symbolX, symbolY);
 
