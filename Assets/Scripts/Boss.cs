@@ -209,21 +209,26 @@ public class Boss : MonoBehaviour
         if (collision.tag == "Projectile") { TakeHit(); Destroy(collision.gameObject); }
     }
 
-    void TakeHit()
+   void TakeHit()
+{
+    if (invincibile) return;
+
+    hpCurrent--;
+
+    // updating size of bar
+    hpBarFill.fillAmount = (float)hpCurrent / (float)hpTotal;
+    UpdateBarColor();
+
+    // boss dies
+    if (hpCurrent <= 0)
     {
-        if (invincibile) return;
-        hpCurrent--;
-
-        // updating size of bar
-        hpBarFill.fillAmount = (float)hpCurrent / (float)hpTotal;
-        UpdateBarColor();
-
-        // checking if there's hp remaining
-        DeathCheck();
-
-        // blinking red when hit
-        StartCoroutine(HitEffect());
+        BossDeath();
+        return;
     }
+
+    // blinking red when hit
+    StartCoroutine(HitEffect());
+}
 
     void DeathCheck()
     {
