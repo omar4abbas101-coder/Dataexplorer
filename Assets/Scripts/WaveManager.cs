@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
 
     void NextWaveCheck()
     {
-        if (asteroidsDone && enemiesDone && lasersDone && GameManager.Instance.pause == false)
+        if (asteroidsDone && enemiesDone && lasersDone && bossDone && GameManager.Instance.pause == false)
             FinishWave();
     }
 
