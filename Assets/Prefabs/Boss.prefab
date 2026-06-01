@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7843968123910029960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.46, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55,10 +55,12 @@ MonoBehaviour:
   bossPosition: {x: 0, y: 3}
   appearingTime: 4
   blinkingInterval: 0.3
-  angle: 0
   width: 2
   height: 1
   bulletAngle: 25
+  dashTime: 2
+  pauseBetweenDashes: 2
+  dashBlinking: 1
   yellowBarCap: 0.6
   redBarCap: 0.3
 --- !u!50 &1365797396098032584
@@ -207,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7843968124725561703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.23, z: 0}
+  m_LocalPosition: {x: 0, y: -1.16, z: 0}
   m_LocalScale: {x: 0.3, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

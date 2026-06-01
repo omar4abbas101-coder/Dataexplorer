@@ -17,9 +17,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] Sprite mutedSprite;
     [SerializeField] Sprite unmutedSprite;
 
-    [Header("Boss hp refs")]
+    [Header("Boss refs")]
     public GameObject bossHpObj;
     public Image bossHpFill;
+    public GameObject dashIndicator;
 
     void Awake()
     {

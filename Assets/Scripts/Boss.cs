@@ -1,13 +1,13 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.TerrainUtils;
 using UnityEngine.UI;
 
 enum BossPhase
 {
     APPEARING,
     DEFAULT,
-    DASHING
+    DASHING,
+    PREPARING_DASH
 }
 
 public class Boss : MonoBehaviour
@@ -37,6 +37,17 @@ public class Boss : MonoBehaviour
     bool shooting = false;
     float shootingT = 0;
 
+    [Header("dash attack")]
+    float dashInterval;
+    int dashCount;
+    float offScreenOffset = 1f;
+    float dashingT = 0;
+    float dashSpeed = 3f;
+    [SerializeField] float dashTime = 2f;
+    float pauseBeforeDash = 2.5f;
+    [SerializeField] float pauseBetweenDashes = 2.5f;
+    [SerializeField] bool dashBlinking;
+
     [Header("HP bar")]
     GameObject hpBarObj;
     Image hpBarFill;
@@ -57,11 +68,20 @@ public class Boss : MonoBehaviour
 
     public void InitBoss(WaveScrObj wave)
     {
+        // hp
         hpTotal = wave.hpTotal;
+
+        // shooting
         shotsInRow = wave.shotsInRow;
         bulletCount = wave.bulletCount;
         shootingIntervals = wave.bulletCount;
         moveSpeed = wave.moveSpeed;
+
+        // dashing
+        dashInterval = wave.dashInterval;
+        dashCount = wave.dashCount;
+        dashSpeed = wave.dashSpeed;
+        pauseBeforeDash = wave.pauseBeforeDash;
 
         hpCurrent = hpTotal;
         StartCoroutine(AppearHP());
@@ -92,6 +112,9 @@ public class Boss : MonoBehaviour
     {
         // switching phase to APPEARING
         currentPhase = BossPhase.APPEARING;
+
+        // setting correct boss rotation
+        transform.up = new Vector3(0f, 0f, 0f);
 
         // invincibility on appearing
         invincibile = invincibility;
@@ -125,7 +148,7 @@ public class Boss : MonoBehaviour
         // switching phase to DEFAULT
         currentPhase = BossPhase.DEFAULT;
         invincibile = false;
-        InvincibilityBlink();
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
     }
 
     void InvincibilityBlink()
@@ -138,6 +161,96 @@ public class Boss : MonoBehaviour
     {
         MoveInCircle();
         ShootingCheck();
+        Dashing();
+        DashCheck();
+    }
+
+    void DashCheck()
+    {
+        if (currentPhase != BossPhase.DEFAULT || shooting) return;
+
+        dashingT += Time.deltaTime;
+
+        if (dashingT > dashInterval)
+        {
+            dashingT = 0;
+
+            StartCoroutine(StartDash());
+        }
+    }
+
+    IEnumerator StartDash()
+    {
+        int dashesCompleted = 0;
+
+        while (dashesCompleted < dashCount)
+        {
+            // DASH PREPARATIION
+            currentPhase = BossPhase.PREPARING_DASH;
+
+            yield return new WaitForSeconds(pauseBeforeDash * 0.5f);
+            // spawning the dash indicator in front of the boss ship
+            GameManager.Instance.uiManager.dashIndicator.SetActive(true);
+            GameManager.Instance.uiManager.dashIndicator.transform.position = Vector3.MoveTowards(transform.position, GameManager.Instance.player.transform.position, 3f);
+            yield return new WaitForSeconds(pauseBeforeDash);
+
+            // DASHING AT PLAYER
+            currentPhase = BossPhase.DASHING;
+            StartCoroutine(DashingEffect());
+
+            GameManager.Instance.uiManager.dashIndicator.SetActive(false);
+
+            // waiting until the boss dashed off screen
+            yield return new WaitForSeconds(dashTime);
+
+            // stops dashing
+            currentPhase = BossPhase.PREPARING_DASH;
+
+            // positioning boss to random off screen side
+            int randomSide = Random.Range(0,4);
+            Vector3 newDashStartPos = Vector3.zero;
+
+            switch (randomSide)
+            {
+                case 0:
+                    newDashStartPos = new Vector3(Level.instance.GetScreenLeft() - offScreenOffset, 0f, 0f); // left
+                    break;
+                case 1:
+                    newDashStartPos = new Vector3(Level.instance.GetScreenRight() + offScreenOffset, 0f, 0f); // right
+                    break;
+                case 2:
+                    newDashStartPos = new Vector3(0f, Level.instance.GetScreenBottom() - offScreenOffset, 0f); // bottom
+                    break;
+                case 3:
+                    newDashStartPos = new Vector3(0f, Level.instance.GetScreenTop() + offScreenOffset, 0f); // top
+                    break;
+            }
+            transform.position = newDashStartPos;
+
+            // increasing completed dash count
+            dashesCompleted++;
+
+            // pause before next dash
+            yield return new WaitForSeconds(pauseBetweenDashes);
+        }
+
+        // make the spaceship appear from top of the screen after all the dashing
+        StartCoroutine(AppearFromTop(false));        
+    }
+
+    void Dashing()
+    {
+        if (currentPhase == BossPhase.PREPARING_DASH && GameManager.Instance.uiManager.dashIndicator.activeSelf != true)
+        {
+            // Looking at player
+            Vector2 directionToPlayer = transform.position - GameManager.Instance.player.transform.position;
+            transform.up = directionToPlayer;
+        }
+        else if (currentPhase == BossPhase.DASHING)
+        {
+            // Dashing forward
+            transform.Translate(0f, -dashSpeed * Time.deltaTime, 0f);
+        }
     }
 
     void MoveInCircle()
@@ -207,28 +320,24 @@ public class Boss : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Projectile") { TakeHit(); Destroy(collision.gameObject); }
+        else if (collision.tag == "Player") { GameManager.Instance.TakeDamage(1); }
     }
 
-   void TakeHit()
-{
-    if (invincibile) return;
-
-    hpCurrent--;
-
-    // updating size of bar
-    hpBarFill.fillAmount = (float)hpCurrent / (float)hpTotal;
-    UpdateBarColor();
-
-    // boss dies
-    if (hpCurrent <= 0)
+    void TakeHit()
     {
-        BossDeath();
-        return;
-    }
+        if (invincibile || currentPhase == BossPhase.DASHING) return;
+        hpCurrent--;
 
-    // blinking red when hit
-    StartCoroutine(HitEffect());
-}
+        // updating size of bar
+        hpBarFill.fillAmount = (float)hpCurrent / (float)hpTotal;
+        UpdateBarColor();
+
+        // checking if there's hp remaining
+        DeathCheck();
+
+        // blinking red when hit
+        StartCoroutine(HitEffect());
+    }
 
     void DeathCheck()
     {
@@ -254,6 +363,19 @@ public class Boss : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
         sprite.color = ogColor;
+    }
+
+    IEnumerator DashingEffect()
+    {
+        while (currentPhase == BossPhase.DASHING && dashBlinking)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Color ogColor = sprite.color;
+            sprite.color = Color.yellow;
+
+            yield return new WaitForSeconds(0.1f);
+            sprite.color = ogColor;
+        }
     }
 
     void UpdateBarColor()
