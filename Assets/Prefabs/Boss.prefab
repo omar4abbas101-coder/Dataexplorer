@@ -60,7 +60,7 @@ MonoBehaviour:
   bulletAngle: 25
   dashTime: 2
   pauseBetweenDashes: 2
-  dashBlinking: 0
+  dashBlinking: 1
   yellowBarCap: 0.6
   redBarCap: 0.3
 --- !u!50 &1365797396098032584
