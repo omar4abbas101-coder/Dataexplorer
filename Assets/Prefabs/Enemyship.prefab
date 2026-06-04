@@ -331,6 +331,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: USB_Graphic_Model
       objectReference: {fileID: 0}
+    - target: {fileID: 9005033539465323409, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005033539465323409, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005033539465323409, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
 --- !u!4 &9068080706958613870 stripped

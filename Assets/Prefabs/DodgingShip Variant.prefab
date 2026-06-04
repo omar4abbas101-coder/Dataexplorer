@@ -31,6 +31,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2758940318179215011, guid: 502672d557632494f9321c10ac45d984, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6833431
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758940318179215011, guid: 502672d557632494f9321c10ac45d984, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5054117549614639808, guid: 502672d557632494f9321c10ac45d984, type: 3}
       propertyPath: dodging
       value: 1
