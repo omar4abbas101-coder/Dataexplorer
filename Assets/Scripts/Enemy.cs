@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class Enemy : MonoBehaviour
 {
     [Header("refs")]
     [SerializeField] GameObject dodgePrefab;
     [SerializeField] AudioClip deathSound;
-    [SerializeField] float deathSoundVolume = 1f;
+    
+
+    [SerializeField] GameObject destroyEffectPrefab;
     BulletDodge dodgeAura;
     [SerializeField] SpriteRenderer sprite;
 
@@ -146,7 +149,7 @@ public class Enemy : MonoBehaviour
         // play death sound
         if (deathSound != null)
         {
-            AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
+            AudioManager.instance.PlaySFX("enemyshipdeathsound",0.9f);
         }
 
         // score
@@ -155,7 +158,7 @@ public class Enemy : MonoBehaviour
         // enemy cleanup
         GameManager.Instance.enemySpawner.EnemyDead(this);
         GameManager.Instance.powerUpManager.SpawnPowerUpCheck(EnemyType.ENEMY, transform.position);
-
+        Instantiate(destroyEffectPrefab,transform.position,Quaternion.identity);
         Destroy(gameObject);
     }
 }

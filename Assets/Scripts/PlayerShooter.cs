@@ -81,7 +81,7 @@ public class PlayerShooter : MonoBehaviour
         }
 
         // playing shooting soundeffect
-        if (shootSfx != null && audioSource != null) audioSource.PlayOneShot(shootSfx);
+        AudioManager.instance.PlaySFX("laser_shooting_sfx",0.7f);
 
         // add overheat
         currentOverheat += overheatPerShot;
