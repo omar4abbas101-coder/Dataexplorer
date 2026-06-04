@@ -7,7 +7,8 @@ enum BossPhase
     APPEARING,
     DEFAULT,
     DASHING,
-    PREPARING_DASH
+    PREPARING_DASH,
+    EXPLODING
 }
 
 public class Boss : MonoBehaviour
@@ -57,6 +58,11 @@ public class Boss : MonoBehaviour
     [SerializeField] float yellowBarCap;
     [SerializeField] float redBarCap;
 
+    [Header("Death animation")]
+    [SerializeField] float deathAnimTime;
+    [SerializeField] float floatingDownSpeed;
+    [SerializeField] float particleInterval;
+    [SerializeField] GameObject deathParticle;
 
     BossPhase currentPhase = BossPhase.APPEARING;
 
@@ -185,6 +191,8 @@ public class Boss : MonoBehaviour
 
         while (dashesCompleted < dashCount)
         {
+            if (currentPhase == BossPhase.EXPLODING) yield break;
+
             // DASH PREPARATIION
             currentPhase = BossPhase.PREPARING_DASH;
 
@@ -320,7 +328,7 @@ public class Boss : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Projectile") { TakeHit(); Destroy(collision.gameObject); }
-        else if (collision.tag == "Player") { GameManager.Instance.TakeDamage(1); }
+        else if (collision.tag == "Player" && currentPhase != BossPhase.EXPLODING) { GameManager.Instance.TakeDamage(1); }
     }
 
     void TakeHit()
@@ -341,9 +349,117 @@ public class Boss : MonoBehaviour
 
     void DeathCheck()
     {
-        if (hpCurrent <= 0) BossDeath();
+        if (hpCurrent <= 0)
+        {  
+            // stops dashing and shooting when dies
+            StopAllCoroutines();
+            GameManager.Instance.uiManager.dashIndicator.SetActive(false);
+
+            StartCoroutine(DeathAnimation());
+        }
     }
 
+    IEnumerator DeathAnimation()
+    {
+        currentPhase = BossPhase.EXPLODING;
+
+        invincibile = true;
+        hpBarObj.SetActive(false);
+        transform.up = new Vector3(0f, 0f, 0f);
+        Color targetColor = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+        Color startingColor = sprite.color;
+        float t = 0;
+        float particleT = 0;
+
+        while (t < deathAnimTime)
+        {
+            t += Time.deltaTime;
+            float clapmedT = t / deathAnimTime;
+
+            // lerping the color
+            Color spriteColor = Color.Lerp(startingColor, targetColor, clapmedT);
+            sprite.color = spriteColor;
+
+            // moving the ship down slowly
+            transform.Translate(0f, floatingDownSpeed * Time.deltaTime, 0f, Space.World);
+
+            // spawning explostion particles
+            particleT += Time.deltaTime;
+            if (particleT > particleInterval)
+            {
+                // resetting the timer
+                particleT = 0;
+
+                // spawning a particle
+                SpawnDeathParticle();
+
+                // playing shake animation
+                StartCoroutine(ShakeAnimation(this.gameObject, 0.2f, 0.35f));
+
+                // playing the sound effect 
+                AudioManager.instance.PlaySFX("BossExplosionSFX");
+            }
+
+            yield return null;
+        }
+
+        // spawning big explosion particle
+        GameObject finalParticle = Instantiate(deathParticle, transform.position, Quaternion.identity);
+        finalParticle.transform.localScale *= 2.5f;
+        // playing the sound effect 
+        AudioManager.instance.PlaySFX("BossExplosionSFX");
+        AudioManager.instance.PlaySFX("BossExplosionSFX");
+        AudioManager.instance.PlaySFX("BossExplosionSFX");
+
+        // after the animation is finished triggering end of the wave
+        BossDeath();
+    }
+
+    IEnumerator ShakeAnimation(GameObject obj, float shakeLength, float shakeIntensity)
+    {
+        // shaking the healthbar for extra juice
+        float t = 0;
+        float maxIntensity = shakeIntensity;
+        Vector3 startingPosition = obj.transform.localPosition;
+
+        while (t < shakeLength)
+        {
+            // checking if object still exists
+            if (obj == null) yield break;
+
+            // Gradually decreasing the intensity
+            t += Time.deltaTime;
+            float actualT = t / shakeLength;
+            float currentIntensity = Mathf.Lerp(maxIntensity, 0f, actualT);
+
+            // Random position offset
+            float xOffset = UnityEngine.Random.Range(-1, 1) * currentIntensity;
+            float yOffset = UnityEngine.Random.Range(-1, 1) * currentIntensity;
+
+            obj.transform.localPosition += new Vector3(xOffset, yOffset, 0);
+
+            yield return null;
+
+            // Reverting the offset
+            obj.transform.localPosition = startingPosition;
+        }
+    }
+
+    void SpawnDeathParticle()
+    {
+        // Getting particle position
+        float particleX = Random.Range(transform.position.x - sprite.size.x / 2, transform.position.x + sprite.size.x / 2);
+        float particleY = Random.Range(transform.position.y - sprite.size.y / 2, transform.position.y + sprite.size.y / 2);
+
+        Vector3 particlePos = new Vector3(particleX, particleY, 0f);
+
+        // Instantiating the particle
+        GameObject newParticle = Instantiate(deathParticle, particlePos, Quaternion.identity);
+    }
+
+    /// <summary>
+    /// Communicating to wave manager that the boss is dead and the wave can be over
+    /// </summary>
     void BossDeath()
     {
         // communication to wave manager that wave is done
@@ -352,7 +468,6 @@ public class Boss : MonoBehaviour
         GameManager.Instance.waveManager.lasersDone = true;
         GameManager.Instance.waveManager.asteroidsDone = true;
 
-        hpBarObj.SetActive(false);
         this.gameObject.SetActive(false);
     }
 
