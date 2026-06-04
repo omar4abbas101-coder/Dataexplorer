@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86d45912cf891a040b1e9b5888a22654, type: 2}
   - {fileID: 11400000, guid: ab46bdd63d994eb46872044094f8c4ad, type: 2}
   - {fileID: 11400000, guid: 45969a747dca89b40aa5d3f2dd0b2c48, type: 2}
+  - {fileID: 11400000, guid: 0485cea7f59f3f841a92b1580ebf36ef, type: 2}
   hazardChance: 0.2
   enemyChance: 0.3
   dodgingEnemyChance: 0.7

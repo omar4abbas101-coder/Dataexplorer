@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
@@ -35,8 +36,17 @@ public class PlayerDamage : MonoBehaviour
         }
     }
 
-
-
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyProjectile")
+        {
+            GameManager.Instance.TakeDamage(1);
+            Destroy(collision.gameObject);
+        }
+    }
 
 }
+
+
+
+

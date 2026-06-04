@@ -17,6 +17,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] Sprite mutedSprite;
     [SerializeField] Sprite unmutedSprite;
 
+    [Header("Boss refs")]
+    public GameObject bossHpObj;
+    public Image bossHpFill;
+    public GameObject dashIndicator;
+
     void Awake()
     {
         // Optional auto-find by name if you forgot to assign in Inspector

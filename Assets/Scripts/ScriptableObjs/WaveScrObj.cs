@@ -24,4 +24,16 @@ public class WaveScrObj : ScriptableObject
     public float laserMaxSize;
     public float laserRotationChance;
     public float laserSpeed;
+
+    [Header("Boss paramteters")]
+    public bool bossWave;
+    public float moveSpeed;
+    public float shootingIntervals;
+    public int shotsInRow;
+    public int hpTotal;
+    public int bulletCount;
+    public float dashInterval;
+    public int dashCount;
+    public float dashSpeed;
+    public float pauseBeforeDash;
 }

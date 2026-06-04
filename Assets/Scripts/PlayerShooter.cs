@@ -5,6 +5,7 @@ public class PlayerShooter : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform firePoint;
+    public SpriteRenderer sprite;    
 
     [Header("shooting type")]
     [HideInInspector] public int bulletCount = 1;
@@ -31,6 +32,9 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] GameObject overheatIndicator;
     [SerializeField] Color barColor;
     [SerializeField] Color barOverheatColor;
+    [SerializeField] GameObject overheatTextIndicator;
+    [SerializeField] Color overheatPlayerColor;
+    Color defaultPlayerColor;
 
     float fireTimer;
 
@@ -39,6 +43,11 @@ public class PlayerShooter : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         fireCooldown = baseFireCooldown; // start normal
         Overheat(false);
+    }
+
+    void Start()
+    {
+        defaultPlayerColor = sprite.color;
     }
 
     void Update()
@@ -84,6 +93,8 @@ public class PlayerShooter : MonoBehaviour
         onCoolDown = isOverheat;
         currentOverheat = (isOverheat) ? 1 : 0;
         currentCooldownSpeed = (isOverheat) ? slowCooldownSpeed : cooldownSpeed;
+        //sprite.color = (isOverheat) ? overheatPlayerColor : defaultPlayerColor; // for whatever reason the player just turns invisible when I try to change the color here
+        overheatTextIndicator.SetActive(isOverheat);
 
         // slowing down the ship
         if (onCoolDown) GetComponent<PlayerController2D>().ModifySpeed(slowdownCoof);

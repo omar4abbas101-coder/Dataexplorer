@@ -22,6 +22,7 @@ public class WaveManager : MonoBehaviour
     public bool asteroidsDone = false;
     public bool enemiesDone = false;
     public bool lasersDone = false;
+    public bool bossDone = false;
 
     void NewWave()
     {
@@ -30,10 +31,12 @@ public class WaveManager : MonoBehaviour
         GameManager.Instance.hazardSpawner.SetSpawnerParams(waves[currentWave]);
         GameManager.Instance.enemySpawner.SetSpawnerParams(waves[currentWave]);
         GameManager.Instance.laserSpawner.SetSpawnerParams(waves[currentWave]);
+        GameManager.Instance.bossSpawner.SetSpawnerParams(waves[currentWave]);
 
         asteroidsDone = waves[currentWave].asteroidTime == 0;
-      enemiesDone = waves[currentWave].maxEnemyAmount == 0;
+        enemiesDone = waves[currentWave].maxEnemyAmount == 0;
         lasersDone = waves[currentWave].laserAmount == 0;
+        bossDone = !waves[currentWave].bossWave;
 
         GameManager.Instance.pause = false;
     }
@@ -45,7 +48,7 @@ public class WaveManager : MonoBehaviour
 
     void NextWaveCheck()
     {
-        if (asteroidsDone && enemiesDone && lasersDone && GameManager.Instance.pause == false)
+        if (asteroidsDone && enemiesDone && lasersDone && bossDone && GameManager.Instance.pause == false)
             FinishWave();
     }
 

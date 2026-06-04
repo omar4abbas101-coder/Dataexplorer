@@ -18,17 +18,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("UI")]
-    [SerializeField] UIManager uiManager;
+    public UIManager uiManager;
 
     [Header("Spawners")]
     public EnemySpawner enemySpawner;
     public SpawnHazard hazardSpawner;
     public LaserSpawner laserSpawner;
     public PowerUpManager powerUpManager;
+    public BossSpawner bossSpawner;
 
     [Header("Waves")]
     public WaveManager waveManager;
     public WaveScrObj currentWave;
+
+    [Header("refs")]
+    public GameObject player;
 
     int score;
     int hp;
