@@ -63,6 +63,10 @@ MonoBehaviour:
   dashBlinking: 1
   yellowBarCap: 0.6
   redBarCap: 0.3
+  deathAnimTime: 6
+  floatingDownSpeed: -0.2
+  particleInterval: 0.8
+  deathParticle: {fileID: 7731960150196917733, guid: ff3edaba6a4ae744eaa5d8b675ddaf7a, type: 3}
 --- !u!50 &1365797396098032584
 Rigidbody2D:
   serializedVersion: 4

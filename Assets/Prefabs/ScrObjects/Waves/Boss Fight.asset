@@ -30,7 +30,7 @@ MonoBehaviour:
   moveSpeed: 1
   shootingIntervals: 2
   shotsInRow: 3
-  hpTotal: 50
+  hpTotal: 8
   bulletCount: 3
   dashInterval: 6
   dashCount: 4

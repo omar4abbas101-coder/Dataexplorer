@@ -19,6 +19,8 @@ public class Level : MonoBehaviour
 
         bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
         topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
+
+        Debug.Log("Level: screen coords defined. Bottom-left point is " + bottomLeft + "; Top-right point is " + topRight);
     }
 
     public float GetScreenTop() => topRight.y;
