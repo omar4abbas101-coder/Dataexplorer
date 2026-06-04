@@ -10,6 +10,10 @@ public class Hazard : MonoBehaviour
     [SerializeField] float rotationRange = 10f;
     [SerializeField] float lifeTime = 300f;
     [SerializeField] float rotationSpeed = 1f;
+    
+    
+
+    [SerializeField] GameObject FolderdeathEffectPrefab;
 
     private void Start()
     {
@@ -72,6 +76,8 @@ public class Hazard : MonoBehaviour
  {
 
  GameManager.Instance.powerUpManager.SpawnPowerUpCheck(EnemyType.HAZARD, transform.position);
+  Instantiate(FolderdeathEffectPrefab,transform.position,Quaternion.identity);
+  AudioManager.instance.PlaySFX("enemyshipdeathsound",0.9f);
   Destroy(gameObject);
 
   }

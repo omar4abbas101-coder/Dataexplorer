@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: dodging
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5054117549614639808, guid: 502672d557632494f9321c10ac45d984, type: 3}
+      propertyPath: destroyEffectPrefab
+      value: 
+      objectReference: {fileID: 7731960150196917733, guid: 4a43bf573af9d5e4e805e664a4e4ff64, type: 3}
     - target: {fileID: 8315275808618926877, guid: 502672d557632494f9321c10ac45d984, type: 3}
       propertyPath: m_RootOrder
       value: 0

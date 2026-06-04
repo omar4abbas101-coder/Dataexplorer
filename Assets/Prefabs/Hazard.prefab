@@ -106,6 +106,8 @@ MonoBehaviour:
   rotationRange: 20
   lifeTime: 15
   rotationSpeed: 100
+  Hazarddeathsound: {fileID: 8300000, guid: 06a41c9b78f70b74780246ce74e4fc60, type: 3}
+  FolderdeathEffectPrefab: {fileID: 7731960150196917733, guid: 20c265890a070a54b8e1b8e115ca5a25, type: 3}
 --- !u!58 &2487029581825984867
 CircleCollider2D:
   m_ObjectHideFlags: 0
