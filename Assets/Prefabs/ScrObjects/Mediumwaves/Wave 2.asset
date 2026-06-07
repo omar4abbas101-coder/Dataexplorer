@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c4ee0ea6d5942b7b259659cd37c6, type: 3}
   m_Name: Wave 2
   m_EditorClassIdentifier: 
-  asteroidTime: 30
+  asteroidTime: 15
   asteroidIntervals: 1
   asteroidSpeed: 4
   enemies: 
@@ -26,3 +26,13 @@ MonoBehaviour:
   laserMaxSize: 2
   laserRotationChance: 0
   laserSpeed: 4
+  bossWave: 0
+  moveSpeed: 0
+  shootingIntervals: 0
+  shotsInRow: 0
+  hpTotal: 0
+  bulletCount: 0
+  dashInterval: 0
+  dashCount: 0
+  dashSpeed: 0
+  pauseBeforeDash: 0

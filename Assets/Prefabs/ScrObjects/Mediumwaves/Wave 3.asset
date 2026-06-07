@@ -15,7 +15,7 @@ MonoBehaviour:
   asteroidTime: 0
   asteroidIntervals: 0
   asteroidSpeed: 0
-  enemies: 00000000010000000000000001000000000000000100000000000000010000000000000001000000
+  enemies: 00000000010000000000000001000000000000000100000000000000
   enemyIntervals: 3
   maxEnemyAmount: 4
   enemySpeed: 3
@@ -26,3 +26,13 @@ MonoBehaviour:
   laserMaxSize: 6
   laserRotationChance: 0.2
   laserSpeed: 2
+  bossWave: 0
+  moveSpeed: 0
+  shootingIntervals: 0
+  shotsInRow: 0
+  hpTotal: 0
+  bulletCount: 0
+  dashInterval: 0
+  dashCount: 0
+  dashSpeed: 0
+  pauseBeforeDash: 0

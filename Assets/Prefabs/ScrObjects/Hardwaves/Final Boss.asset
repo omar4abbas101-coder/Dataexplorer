@@ -32,7 +32,7 @@ MonoBehaviour:
   shotsInRow: 3
   hpTotal: 18
   bulletCount: 3
-  dashInterval: 20
-  dashCount: 0
-  dashSpeed: 0
+  dashInterval: 18
+  dashCount: 2
+  dashSpeed: 3
   pauseBeforeDash: 0
