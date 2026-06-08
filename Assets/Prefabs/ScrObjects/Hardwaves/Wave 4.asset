@@ -22,7 +22,7 @@ MonoBehaviour:
   laserAmount: 6
   laserMinInterval: 1
   laserMaxInterval: 2
-  laserMinSize: 2
+  laserMinSize: 2.5
   laserMaxSize: 3
   laserRotationChance: 0
   laserSpeed: 3
