@@ -20,7 +20,7 @@ MonoBehaviour:
   maxEnemyAmount: 0
   enemySpeed: 0
   laserAmount: 10
-  laserMinInterval: 1
+  laserMinInterval: 2.5
   laserMaxInterval: 6
   laserMinSize: 1
   laserMaxSize: 2
