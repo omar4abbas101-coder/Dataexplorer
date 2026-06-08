@@ -148,7 +148,7 @@ MonoBehaviour:
   movementMargins: 2
   moveDirection: 1
   appearing: 0
-  screenToShipOffset: 2
+  screenToShipOffset: 1.2
   shipToShipOffset: 1
   appearingTime: 2
   blinkingInterval: 0.3
