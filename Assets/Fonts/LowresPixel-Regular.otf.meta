@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 57cacbdcd1d6f24418aa6774afbc15a5
+guid: fb0db4147aa48324da6447e14b35bd3a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Coral Pixels
+  - Lower Pixel
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
