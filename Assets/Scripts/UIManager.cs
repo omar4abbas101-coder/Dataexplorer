@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
     public void Refresh(int score, int hp)
     {
         if (scoreText != null)
-            scoreText.text = $"SCORE {score}";
+            scoreText.text = score.ToString();
 
         if (healthText != null)
             healthText.text = $"HP: {hp}";
