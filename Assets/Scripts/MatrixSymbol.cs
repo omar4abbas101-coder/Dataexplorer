@@ -1,29 +1,46 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class MatrixSymbol : MonoBehaviour
 {
-    public SpriteRenderer sprite;
-    [HideInInspector] public float speed = 1f;
+    SpriteRenderer spriteRenderer;
+    float fallSpeed;
+    Camera mainCam;
 
-    public void InitSymbol(Sprite spriteToUse, Color colorToUse, float scaleToUse, float speedToUse)
+    void Awake()
     {
-        sprite.sprite = spriteToUse;
-        transform.localScale = new Vector3(scaleToUse, scaleToUse);
-        sprite.color = colorToUse;
-        speed = speedToUse;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        mainCam = Camera.main;
     }
 
-    private void FixedUpdate()
+    public void InitSymbol(Sprite sprite, Color color, float scale, float speed)
     {
-        // moving the symbol
-        transform.Translate(0, -speed, 0);
-
-        // destroying the symbol once it reaches off screen
-        if (sprite.bounds.max.y < Level.instance.GetScreenBottom())
+        if (spriteRenderer == null)
         {
-            Destroy(this.gameObject);
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        spriteRenderer.sprite = sprite;
+        spriteRenderer.color = color;
+        transform.localScale = Vector3.one * scale;
+        fallSpeed = speed;
+    }
+
+    void FixedUpdate()
+    {
+        transform.position += Vector3.down * fallSpeed;
+
+        if (mainCam == null)
+        {
+            mainCam = Camera.main;
+            return;
+        }
+
+        float camDistance = -mainCam.transform.position.z;
+        Vector3 bottomLeft = mainCam.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+
+        if (transform.position.y < bottomLeft.y - 1f)
+        {
+            Destroy(gameObject);
         }
     }
 }
