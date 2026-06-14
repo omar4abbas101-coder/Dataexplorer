@@ -29,8 +29,16 @@ public class PowerUpManager : MonoBehaviour
     }
 
     void SpawnPowerUp(Vector3 position)
-    { 
-        GameObject randomPowerUp = powerUpList[Random.Range(0, powerUpList.Count)];
+    {
+        // picking a random powerup id
+        int randomPowerUpID = 0;
+        do
+        {
+            randomPowerUpID = Random.Range(0, powerUpList.Count);
+        } while (randomPowerUpID == 0 && GameManager.Instance.HP == GameManager.Instance.startHP); // making sure its not hp while at max hp
+
+
+        GameObject randomPowerUp = powerUpList[randomPowerUpID];
         GameObject newPowerUp = Instantiate(randomPowerUp, position, Quaternion.identity);
 
         Debug.Log("PowerUpManager: powerUp spawned: " + newPowerUp.name);

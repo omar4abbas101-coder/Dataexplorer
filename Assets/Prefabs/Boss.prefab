@@ -58,7 +58,7 @@ MonoBehaviour:
   width: 2
   height: 1
   bulletAngle: 25
-  dashTime: 2
+  dashTime: 4
   pauseBetweenDashes: 2
   dashBlinking: 1
   yellowBarCap: 0.6

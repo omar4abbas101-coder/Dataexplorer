@@ -143,7 +143,7 @@ MonoBehaviour:
   dodgePrefab: {fileID: 6723560472104859727, guid: 7ab410462289e7b4389bd2d05fe2df96, type: 3}
   deathSound: {fileID: 8300000, guid: 06a41c9b78f70b74780246ce74e4fc60, type: 3}
   destroyEffectPrefab: {fileID: 7731960150196917733, guid: 0c4b68524dc9a074ba1f7f90b62fb8cd, type: 3}
-  sprite: {fileID: 2438553701039907815}
+  enemyVisualsObj: {fileID: 2955947262764701274}
   moveSpeed: 3
   movementMargins: 2
   moveDirection: 1
@@ -151,7 +151,7 @@ MonoBehaviour:
   screenToShipOffset: 1.2
   shipToShipOffset: 1
   appearingTime: 2
-  blinkingInterval: 0.3
+  blinkingInterval: 0.2
   hp: 1
   scoreValue: 50
   dodging: 0
@@ -271,6 +271,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8315275808618926877}
     m_Modifications:
+    - target: {fileID: 781585861492760691, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483467719394695423, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2840008344130500700, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -345,6 +353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
+--- !u!1 &2955947262764701274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8337382881768551272, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}
+  m_PrefabInstance: {fileID: 6535277011510519090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9068080706958613870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2840008344130500700, guid: bad29f6846c59ac448a59f5dc0d9ad2b, type: 3}

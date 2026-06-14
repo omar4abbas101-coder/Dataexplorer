@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameDifficultyScrObj difficulty;
 
     [Header("Game State")]
-    [SerializeField] int startHP = 3;
+    public int startHP = 3;
     [SerializeField] string gameOverSceneName = "GameOver";
     [SerializeField] float invincibleSecondsAfterHit = 1f;
     [HideInInspector] public bool pause = true;
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     public void PlayerHit(int damage)
     {
         if (isGameOver) return;
-        if (isInvincible) return;
+        if (isInvincible && damage > 0) return;
 
         hp -= damage;
         if (hp < 0) hp = 0;
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        SetInvincible(invincibleSecondsAfterHit);
+        if (damage > 0) SetInvincible(invincibleSecondsAfterHit);
     }
 
     IEnumerator DelayedGameOver()

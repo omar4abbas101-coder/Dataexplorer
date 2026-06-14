@@ -26,3 +26,13 @@ MonoBehaviour:
   laserMaxSize: 0
   laserRotationChance: 0
   laserSpeed: 0
+  bossWave: 0
+  moveSpeed: 0
+  shootingIntervals: 0
+  shotsInRow: 0
+  hpTotal: 0
+  bulletCount: 0
+  dashInterval: 0
+  dashCount: 0
+  dashSpeed: 0
+  pauseBeforeDash: 0
