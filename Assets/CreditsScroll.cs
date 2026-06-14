@@ -4,14 +4,16 @@ using UnityEngine.SceneManagement;
 public class CreditsScroll : MonoBehaviour
 {
     [SerializeField] float scrollSpeed = 50f;
-    [SerializeField] float endY = 700f;
-    [SerializeField] string Startingscene = "Starting screen";
+    [SerializeField] float creditsDuration = 20f;
+    [SerializeField] string startingScene = "Starting screen";
 
     RectTransform rectTransform;
+    float timer;
 
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        timer = creditsDuration;
     }
 
     void Update()
@@ -19,9 +21,13 @@ public class CreditsScroll : MonoBehaviour
         rectTransform.anchoredPosition +=
             Vector2.up * scrollSpeed * Time.deltaTime;
 
-        if (rectTransform.anchoredPosition.y >= endY)
+        timer -= Time.deltaTime;
+
+        Debug.Log("Time Remaining: " + timer.ToString("F1"));
+
+        if (timer <= 0f)
         {
-            SceneManager.LoadScene(Startingscene);
+            SceneManager.LoadScene(startingScene);
         }
     }
 }

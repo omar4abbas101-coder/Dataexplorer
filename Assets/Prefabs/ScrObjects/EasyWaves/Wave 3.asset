@@ -19,13 +19,13 @@ MonoBehaviour:
   enemyIntervals: 0
   maxEnemyAmount: 0
   enemySpeed: 0
-  laserAmount: 14
+  laserAmount: 6
   laserMinInterval: 1
   laserMaxInterval: 6
   laserMinSize: 3
   laserMaxSize: 6
   laserRotationChance: 0.5
-  laserSpeed: 3
+  laserSpeed: 4
   bossWave: 0
   moveSpeed: 0
   shootingIntervals: 0
