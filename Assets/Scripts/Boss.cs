@@ -41,7 +41,7 @@ public class Boss : MonoBehaviour
     [Header("dash attack")]
     float dashInterval;
     int dashCount;
-    float offScreenOffset = 1f;
+    float offScreenOffset = 1.5f;
     float dashingT = 0;
     float dashSpeed = 3f;
     [SerializeField] float dashTime = 2f;

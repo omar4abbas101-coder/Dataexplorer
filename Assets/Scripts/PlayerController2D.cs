@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -14,6 +15,7 @@ public class PlayerController2D : MonoBehaviour
     [Header("Rotation")]
     [SerializeField] bool rotationEnabled;
     [SerializeField] float rotationAngle;
+    [SerializeField] float rotationSpeed = 1f;
     float angleLeft;
     float angleRight;
 
@@ -49,10 +51,13 @@ public class PlayerController2D : MonoBehaviour
         if (rotationEnabled == false) return;
 
         // calculating rotation
-        float currentAngle = (input.x > 0) ? angleRight * input.x : angleLeft * -input.x;
+        //float currentAngle = (input.x > 0) ? angleRight * input.x : angleLeft * input.x;
+        float currentAngle = rotationAngle * -input.x;
+        if (input.x == 0) currentAngle = 0;
 
         // rotating the spaceship
-        transform.eulerAngles = new Vector3(0, 0, currentAngle);
+        Quaternion targetRotation = Quaternion.Euler(0, 0, currentAngle);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
 
     void MoveInput()
@@ -82,6 +87,6 @@ public class PlayerController2D : MonoBehaviour
 
     void Movement()
     {
-        rb.velocity = input * moveSpeed;
+        transform.Translate(input.x * moveSpeed, input.y * moveSpeed, 0f, Space.World);
     }
 }

@@ -2296,10 +2296,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpList:
-  - {fileID: 2503667370713526518, guid: 22f00c47d4ec1de4c8da3b1b3f3297d1, type: 3}
+  - {fileID: 3053587345248224318, guid: 8e8701be790a5f14dbdb780a4ff753e4, type: 3}
   - {fileID: 1366182251854831077, guid: 9685887636f0609409461acd16eae54f, type: 3}
   - {fileID: 6014003161680700031, guid: 3e9aa827ea27a4e419d44067532096e6, type: 3}
   - {fileID: 8972759480631991933, guid: 81c070c9ff6c131468941c42a803532b, type: 3}
+  - {fileID: 2503667370713526518, guid: 22f00c47d4ec1de4c8da3b1b3f3297d1, type: 3}
 --- !u!1 &1442411297
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,14 +3170,6 @@ PrefabInstance:
       propertyPath: firepoint
       value: 
       objectReference: {fileID: 231248871}
-    - target: {fileID: 5146339320547366725, guid: 106a6aafdfab262428f48268e3505856, type: 3}
-      propertyPath: moveSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146339320547366725, guid: 106a6aafdfab262428f48268e3505856, type: 3}
-      propertyPath: baseMoveSpeed
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5146339320547366725, guid: 106a6aafdfab262428f48268e3505856, type: 3}
       propertyPath: rotationIntensity
       value: 0.5

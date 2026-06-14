@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] GameObject destroyEffectPrefab;
     BulletDodge dodgeAura;
-    [SerializeField] SpriteRenderer sprite;
+    [SerializeField] GameObject enemyVisualsObj;
 
     [Header("Movement")]
     [HideInInspector] public float moveSpeed = 3f;
@@ -90,13 +90,12 @@ public class Enemy : MonoBehaviour
         }
 
         appearing = false;
-        InvisibilityBlink();
+        enemyVisualsObj.gameObject.SetActive(true);
     }
 
     void InvisibilityBlink()
     {
-        float alpha = (sprite.color.a != 1 || appearing == false) ? 1f : 0.3f;
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, alpha);
+        enemyVisualsObj.gameObject.SetActive(!enemyVisualsObj.gameObject.activeSelf);
     }
 
     void Update()
