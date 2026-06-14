@@ -9,6 +9,7 @@ public class StartMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI startText;
     [SerializeField] float textFadingSpeed;
     [SerializeField] float pauseWhenFull;
+    public AudioManager audioManager;
 
     public void StartGame()
     {
@@ -45,9 +46,12 @@ public class StartMenu : MonoBehaviour
         }
     }
 
-    private void Update()
+private void Update()
+{
+    if (Input.GetMouseButtonUp(0))
     {
-        // starting the game when player presses the button
-        if (Input.GetMouseButtonUp(0)) StartGame();
+        AudioManager.instance.PlaySFX("startinggamesound");
+        StartGame();
     }
+}
 }

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicShip Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2438553701039907815, guid: 502672d557632494f9321c10ac45d984, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8315275808618926877, guid: 502672d557632494f9321c10ac45d984, type: 3}
       propertyPath: m_RootOrder
       value: 0
