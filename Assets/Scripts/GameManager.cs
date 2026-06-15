@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameDifficultyScrObj difficulty;
 
     [Header("Game State")]
-    public int startHP = 3;
+    public int startHP = 5;
     [SerializeField] string gameOverSceneName = "GameOver";
     [SerializeField] float invincibleSecondsAfterHit = 1f;
     [HideInInspector] public bool pause = true;
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         score = 0;
-        hp = startHP;
+        hp = 5;
         isGameOver = false;
         isInvincible = false;
 
