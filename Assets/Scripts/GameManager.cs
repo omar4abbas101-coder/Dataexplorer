@@ -5,6 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [Header("refs")]
+    [SerializeField] GameObject scoreBonus;
+    [SerializeField] GameObject worldCanvas;
+
     [Header("GameSettings")]
     public GameSettings settings;
     public GameDifficultyScrObj difficulty;
@@ -79,12 +83,24 @@ public class GameManager : MonoBehaviour
     public float GetScreenLeft() => Level.instance.GetScreenLeft();
     public float GetScreenRight() => Level.instance.GetScreenRight();
 
+
     public void AddScore(int amount)
     {
         if (isGameOver) return;
 
         score += amount;
         RefreshUI();
+    }
+
+    public void AddScore(int amount, Vector3 scoreBonusPos, Color scoreTextColor)
+    {
+        if (isGameOver) return;
+
+        score += amount;
+        RefreshUI();
+
+        GameObject newScoreBonus = Instantiate(scoreBonus, scoreBonusPos, Quaternion.identity, worldCanvas.transform);
+        newScoreBonus.GetComponent<ScoreBonus>().InitScoreBonus(scoreTextColor, amount);
     }
 
     public void PlayerHit(int damage)
