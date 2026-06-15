@@ -765,12 +765,12 @@ MonoBehaviour:
 
 
 
-    Omar Abbas
+    <color=blue> Omar Abbas</color>
 
-    Product Owner
+    Product
+    Owner
 
-    Game
-    Designer
+    Game Designer
 
     Programmer
 
@@ -780,16 +780,17 @@ MonoBehaviour:
 
 
 
-    Igors Sorogovecs
+    <color=orange>
+    Igors Sorogovecs</color>
 
-    Lead
-    Programmer
+    Lead Programmer
 
     Game Designer
 
 
 
-    Samir
+    <color=#2E6F40>
+    Samir metwaly </color>
 
     Lead Artist
 
@@ -797,21 +798,21 @@ MonoBehaviour:
 
 
 
-    Special
-    Thanks
+    Special Thanks
 
 
 
-    Our classmates,
+    Our
+    classmates,
 
     for testing the game
 
-    and providing valuable
-    feedback.
+    and providing valuable feedback.
 
 
 
-    Thank you for playing DataExplorer!'
+    Thank
+    you for playing DataExplorer!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
   m_sharedMaterial: {fileID: 50300564428768054, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
@@ -874,7 +875,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -13.769639, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
