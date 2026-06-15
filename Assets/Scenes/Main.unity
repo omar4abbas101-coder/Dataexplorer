@@ -847,7 +847,7 @@ RectTransform:
   - {fileID: 85419537}
   - {fileID: 1593942132}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -889,7 +889,7 @@ Transform:
   - {fileID: 1354762468}
   - {fileID: 1802763920}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603864243
 GameObject:
@@ -1386,7 +1386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &844141948
 AudioSource:
@@ -1712,7 +1712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014592641483776239, guid: e41b2b87ff6c2ff47953bffdeffdc0fb, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6014592641483776239, guid: e41b2b87ff6c2ff47953bffdeffdc0fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2764,7 +2764,6 @@ MonoBehaviour:
   worldCanvas: {fileID: 853365645}
   settings: {fileID: 11400000, guid: 2d00f23a1e8386b409bccf5ba2de192b, type: 2}
   difficulty: {fileID: 11400000, guid: 80ed0460945c7b346a9ba6b2d288a633, type: 2}
-  startHP: 3
   gameOverSceneName: GameOver
   invincibleSecondsAfterHit: 4
   pause: 0
@@ -2779,6 +2778,7 @@ MonoBehaviour:
   waveManager: {fileID: 649915142}
   currentWave: {fileID: 0}
   player: {fileID: 1020178146}
+  hp: 0
 --- !u!4 &1667305906
 Transform:
   m_ObjectHideFlags: 0
@@ -2844,7 +2844,7 @@ Transform:
   - {fileID: 3991781157219627247}
   - {fileID: 853365646}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1741761013
 GameObject:
@@ -3975,7 +3975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6505828175368228882, guid: bab848b62b7102d45941e8b99ce48157, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6505828175368228882, guid: bab848b62b7102d45941e8b99ce48157, type: 3}
       propertyPath: m_LocalPosition.x

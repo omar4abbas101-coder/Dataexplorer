@@ -304,6 +304,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &353482385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353482386}
+  m_Layer: 0
+  m_Name: CreditEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353482386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353482385}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -37, y: -754.7, z: -1.046624}
+  m_LocalScale: {x: 0.99116, y: 0.99116, z: 0.99116}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1983153840}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692185761
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,12 +629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 480, y: 270}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -618,10 +649,10 @@ Canvas:
   m_GameObject: {fileID: 1624769071}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 40171387}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -681,7 +712,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 353482386}
   m_Father: {fileID: 1624769075}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -702,9 +734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78ab38104ebf7d42b59b9af332fd06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 100
-  endY: 800
-  Startingscene: Starting screen
+  scrollSpeed: 70
+  creditsDuration: 14.8
+  startingScene: Starting screen
 --- !u!114 &1983153842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,12 +765,12 @@ MonoBehaviour:
 
 
 
-    Omar Abbas
+    <color=blue> Omar Abbas</color>
 
-    Product Owner
+    Product
+    Owner
 
-    Game
-    Designer
+    Game Designer
 
     Programmer
 
@@ -748,16 +780,17 @@ MonoBehaviour:
 
 
 
-    Igors Sorogovecs
+    <color=orange>
+    Igors Sorogovecs</color>
 
-    Lead
-    Programmer
+    Lead Programmer
 
     Game Designer
 
 
 
-    Samir
+    <color=#2E6F40>
+    Samir metwaly </color>
 
     Lead Artist
 
@@ -765,21 +798,21 @@ MonoBehaviour:
 
 
 
-    Special
-    Thanks
+    Special Thanks
 
 
 
-    Our classmates,
+    Our
+    classmates,
 
     for testing the game
 
-    and providing valuable
-    feedback.
+    and providing valuable feedback.
 
 
 
-    Thank you for playing DataExplorer!'
+    Thank
+    you for playing DataExplorer!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
   m_sharedMaterial: {fileID: 50300564428768054, guid: 2c72e8b593ae79b479d0cee2a8793886, type: 2}
@@ -842,7 +875,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -13.769639, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
