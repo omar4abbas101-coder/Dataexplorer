@@ -45,14 +45,11 @@ public class Projectile : MonoBehaviour
     {
         int score = hazard.GetScoreValue();
 
-        if (ComboManager.Instance != null)
-        {
-            ComboManager.Instance.RegisterHit();
-            score = ComboManager.Instance.ApplyMultiplier(score);
-        }
+        ComboManager.Instance.RegisterHit();
+        score = ComboManager.Instance.ApplyMultiplier(score);
 
-        if (GameManager.Instance != null)
-            GameManager.Instance.AddScore(score);
+
+        GameManager.Instance.AddScore(score, transform.position, Color.green);
 
         if (CameraShake.Instance != null)
             CameraShake.Instance.Shake();

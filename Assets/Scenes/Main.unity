@@ -2760,6 +2760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6924f1c334a65438c544f1f64454da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreBonus: {fileID: 650043658965201298, guid: 0dfd9c98c65b1eb4a93661ce06f30ad5, type: 3}
+  worldCanvas: {fileID: 853365645}
   settings: {fileID: 11400000, guid: 2d00f23a1e8386b409bccf5ba2de192b, type: 2}
   difficulty: {fileID: 11400000, guid: 80ed0460945c7b346a9ba6b2d288a633, type: 2}
   startHP: 3
@@ -3944,7 +3946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115730101005767916, guid: 9554c69dd4fe66b46a501d93b10453c7, type: 3}
       propertyPath: audioClips.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1115730101005767916, guid: 9554c69dd4fe66b46a501d93b10453c7, type: 3}
       propertyPath: audioClips.Array.data[0]
@@ -3958,6 +3960,10 @@ PrefabInstance:
       propertyPath: audioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 06a41c9b78f70b74780246ce74e4fc60, type: 3}
+    - target: {fileID: 1115730101005767916, guid: 9554c69dd4fe66b46a501d93b10453c7, type: 3}
+      propertyPath: audioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e28585ccfcf5374e8367851d65debdb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9554c69dd4fe66b46a501d93b10453c7, type: 3}
 --- !u!1001 &3316948563075276412

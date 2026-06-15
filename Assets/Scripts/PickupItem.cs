@@ -16,17 +16,9 @@ public class PickupItem : MonoBehaviour
             return;
 
         // Increase score
-        GameManager.Instance.AddScore( pickupscore);
-
-        // Play sound safely
-        if (audioSource != null && audioSource.clip != null)
-        {
-            audioSource.Play();
-            Destroy(gameObject, audioSource.clip.length);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        GameManager.Instance.AddScore(pickupscore, transform.position, Color.yellow);
+        AudioManager.instance.PlaySFX("CollectSFX");
+      
+        Destroy(gameObject);
     }
 }
