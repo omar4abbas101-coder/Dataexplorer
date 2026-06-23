@@ -65,7 +65,7 @@ public class PlayerShooter : MonoBehaviour
         PassiveCooldown();
     }
 
-    void Shoot()
+    public void Shoot()
     {
         // doesn't shoot while overheated
         if (onCoolDown) return;

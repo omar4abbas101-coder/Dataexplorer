@@ -2,8 +2,11 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
-
+using PinePie.SimpleJoystick;
 [RequireComponent(typeof(Rigidbody2D))]
+
+
+
 public class PlayerController2D : MonoBehaviour
 {
     [Header("Movement")]
@@ -11,7 +14,8 @@ public class PlayerController2D : MonoBehaviour
     public float moveSpeed;
     Rigidbody2D rb;
     Vector2 input;
-
+[Header("Mobile")]
+public JoystickController joystick;
     [Header("Rotation")]
     [SerializeField] bool rotationEnabled;
     [SerializeField] float rotationAngle;
@@ -60,20 +64,20 @@ public class PlayerController2D : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
 
-    void MoveInput()
+   void MoveInput()
+{
+    float horizontal = Input.GetAxis("Horizontal");
+    float vertical = Input.GetAxis("Vertical");
+
+    if (joystick != null)
     {
-        // I switched GetAxisRaw to GetAxis (and removed "Snap" from Axis settings) to get the gradual start and stop to the ship movement
-        // To make the delay in movement bigger or smaller you can play around with "Gravity" and "Sensitivity" variables in Axis settings in Edit > Project Settings > Input Manager > Axis > Vertical / Horizontal
-        // Increasing gravity will make the ship stop faster
-        // Increasing Sensitivity will make the ship accelerate faster
-
-        input = new Vector2(
-            Input.GetAxis("Horizontal"), 
-            Input.GetAxis("Vertical")
-        );
-
-        input = Vector2.ClampMagnitude(input, 1f);
+        horizontal += joystick.InputDirection.x;
+        vertical += joystick.InputDirection.y;
     }
+
+    input = new Vector2(horizontal, vertical);
+    input = Vector2.ClampMagnitude(input, 1f);
+}
 
     void FixedUpdate()
     {
